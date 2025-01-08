@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class ManualRequest extends Datas  {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get(URL);
@@ -25,7 +25,18 @@ public class ManualRequest extends Datas  {
 		WebElement Markets=driver.findElement(By.id("request-country-select"));
 		Select slct1 = new Select(Markets);
 		slct1.selectByValue("1");
-		
+		WebElement VrfTyp=driver.findElement(By.id("account_verification"));
+		Select slct2 = new Select(VrfTyp);
+		slct2.selectByValue("true");
+		WebElement env=driver.findElement(By.id("env"));
+		Select slct3 = new Select(env);
+		slct3.selectByValue("sandbox");
+		driver.findElement(By.id("submit-check")).click();
+		Thread.sleep(3000);
+		String URL = driver.findElement(By.id("request_url_copy")).getAttribute("value");
+		System.out.println(URL);
+		driver.findElement(By.className("copy-button")).click();
+//		driver.navigate().to
 	}
 
 }
