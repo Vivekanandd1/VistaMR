@@ -1,10 +1,16 @@
 import java.time.Duration;
+import java.util.Iterator;
+import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ManualRequest extends Datas  {
 	
@@ -13,6 +19,7 @@ public class ManualRequest extends Datas  {
 		driver.manage().window().maximize();
 		driver.get(URL);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(10));
 		driver.findElement(By.id("kreditz_email")).sendKeys(Email);
 		driver.findElement(By.id("kreditz_current_password")).sendKeys(Password);
 		driver.findElement(By.cssSelector("button[type='submit']")).click();
@@ -34,9 +41,32 @@ public class ManualRequest extends Datas  {
 		driver.findElement(By.id("submit-check")).click();
 		Thread.sleep(3000);
 		String URL = driver.findElement(By.id("request_url_copy")).getAttribute("value");
-		System.out.println(URL);
-		driver.findElement(By.className("copy-button")).click();
-//		driver.navigate().to
+		driver.switchTo().newWindow(WindowType.TAB);
+        driver.navigate().to(URL);
+        Set<String> Wind = driver.getWindowHandles();
+        Iterator<String> Winds = Wind.iterator();
+        String Parent = Winds.next();
+        String Child = Winds.next();
+        Thread.sleep(2000);
+        driver.switchTo().defaultContent();
+        WebElement Bank = driver.findElement(By.cssSelector("a[data-bank-name='Nordea']"));
+        wait.until(ExpectedConditions.elementToBeClickable(Bank));
+        Bank.click();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,800)");
+        WebElement NextBtn = driver.findElement(By.id("next-btn"));
+        wait.until(ExpectedConditions.elementToBeClickable(NextBtn));
+        NextBtn.click();
+        WebElement SubmitBtn = driver.findElement(By.id("submit"));
+        wait.until(ExpectedConditions.elementToBeClickable(SubmitBtn));
+        SubmitBtn.click();
+        WebElement SuccessText = driver.findElement(By.cssSelector("div.thank-you-tag"));
+        wait.until(ExpectedConditions.visibilityOf(SuccessText));
+        driver.switchTo().window(Parent);
+        System.out.println("turned for parent");
+        Thread.sleep(2000);
+        driver.quit();
+        
 	}
 
 }
