@@ -19,7 +19,7 @@ public class ManualRequest extends Datas  {
 		driver.manage().window().maximize();
 		driver.get(URL);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(15));
 		driver.findElement(By.id("kreditz_email")).sendKeys(Email);
 		driver.findElement(By.id("kreditz_current_password")).sendKeys(Password);
 		driver.findElement(By.cssSelector("button[type='submit']")).click();
@@ -60,8 +60,12 @@ public class ManualRequest extends Datas  {
         WebElement SubmitBtn = driver.findElement(By.id("submit"));
         wait.until(ExpectedConditions.elementToBeClickable(SubmitBtn));
         SubmitBtn.click();
-        WebElement SuccessText = driver.findElement(By.cssSelector("div.thank-you-tag"));
-        wait.until(ExpectedConditions.visibilityOf(SuccessText));
+        driver.switchTo().window(Child);
+        driver.switchTo().defaultContent();
+//        WebElement SuccessText = driver.findElement(By.xpath("//p/a[text()='verifications@leovegas.com']"));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//p/a[text()='verifications@leovegas.com']")));
+        System.out.println(driver.getTitle());
+        Thread.sleep(2000);
         driver.switchTo().window(Parent);
         System.out.println("turned for parent");
         Thread.sleep(2000);
