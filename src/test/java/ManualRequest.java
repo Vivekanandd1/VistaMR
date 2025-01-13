@@ -17,12 +17,9 @@ public class ManualRequest extends Datas  {
 	public static void main(String[] args) throws InterruptedException {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get(URL);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(15));
-		driver.findElement(By.id("kreditz_email")).sendKeys(Email);
-		driver.findElement(By.id("kreditz_current_password")).sendKeys(Password);
-		driver.findElement(By.cssSelector("button[type='submit']")).click();
+		Login(driver);
 		driver.findElement(By.cssSelector("span.menu-icon-new-request")).click();
 		driver.findElement(By.id("recipient_name")).sendKeys(Name);
 		driver.findElement(By.id("e-post")).sendKeys(Email);
@@ -36,9 +33,9 @@ public class ManualRequest extends Datas  {
 		select(env, "sandbox");
 		driver.findElement(By.id("submit-check")).click();
 		Thread.sleep(3000);
-		String URL = driver.findElement(By.id("request_url_copy")).getAttribute("value");
+		String URLs = driver.findElement(By.id("request_url_copy")).getAttribute("value");
 		driver.switchTo().newWindow(WindowType.TAB);
-        driver.navigate().to(URL);
+        driver.navigate().to(URLs);
         Set<String> Wind = driver.getWindowHandles();
         Iterator<String> Winds = Wind.iterator();
         String Parent = Winds.next();
@@ -66,6 +63,13 @@ public class ManualRequest extends Datas  {
         Thread.sleep(2000);
         driver.quit();
         
+	}
+	
+	public static void Login(WebDriver driver) {
+		driver.get(URL);
+		driver.findElement(By.id("kreditz_email")).sendKeys(Email);
+		driver.findElement(By.id("kreditz_current_password")).sendKeys(Password);
+		driver.findElement(By.cssSelector("button[type='submit']")).click();
 	}
 	
 	public static Select select(WebElement E, String S) {  
