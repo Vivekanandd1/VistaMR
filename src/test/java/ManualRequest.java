@@ -27,17 +27,13 @@ public class ManualRequest extends Datas  {
 		driver.findElement(By.id("recipient_name")).sendKeys(Name);
 		driver.findElement(By.id("e-post")).sendKeys(Email);
 		WebElement types = driver.findElement(By.cssSelector("select[name='type']"));
-		Select slct = new Select(types);
-		slct.selectByValue("customer");
+        select(types, "customer");
 		WebElement Markets=driver.findElement(By.id("request-country-select"));
-		Select slct1 = new Select(Markets);
-		slct1.selectByValue("1");
+		select(Markets, "1");
 		WebElement VrfTyp=driver.findElement(By.id("account_verification"));
-		Select slct2 = new Select(VrfTyp);
-		slct2.selectByValue("true");
+		select(VrfTyp, "false");
 		WebElement env=driver.findElement(By.id("env"));
-		Select slct3 = new Select(env);
-		slct3.selectByValue("sandbox");
+		select(env, "sandbox");
 		driver.findElement(By.id("submit-check")).click();
 		Thread.sleep(3000);
 		String URL = driver.findElement(By.id("request_url_copy")).getAttribute("value");
@@ -62,7 +58,6 @@ public class ManualRequest extends Datas  {
         SubmitBtn.click();
         driver.switchTo().window(Child);
         driver.switchTo().defaultContent();
-//        WebElement SuccessText = driver.findElement(By.xpath("//p/a[text()='verifications@leovegas.com']"));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//p/a[text()='verifications@leovegas.com']")));
         System.out.println(driver.getTitle());
         Thread.sleep(2000);
@@ -71,6 +66,12 @@ public class ManualRequest extends Datas  {
         Thread.sleep(2000);
         driver.quit();
         
+	}
+	
+	public static Select select(WebElement E, String S) {  
+		Select slct = new Select(E);
+		slct.selectByValue(S);
+		return slct;
 	}
 
 }
