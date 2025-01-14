@@ -31,17 +31,7 @@ public class ManualRequest extends Datas  {
         String Child = Winds.next();
         Thread.sleep(2000);
         driver.switchTo().defaultContent();
-        WebElement Bank = driver.findElement(By.cssSelector("a[data-bank-name='Nordea']"));
-        wait.until(ExpectedConditions.elementToBeClickable(Bank));
-        Bank.click();
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,800)");
-        WebElement NextBtn = driver.findElement(By.id("next-btn"));
-        wait.until(ExpectedConditions.elementToBeClickable(NextBtn));
-        NextBtn.click();
-        WebElement SubmitBtn = driver.findElement(By.id("submit"));
-        wait.until(ExpectedConditions.elementToBeClickable(SubmitBtn));
-        SubmitBtn.click();
+        Consent(driver, wait);
         driver.switchTo().window(Child);
         driver.switchTo().defaultContent();
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//p/a[text()='verifications@leovegas.com']")));
@@ -54,32 +44,6 @@ public class ManualRequest extends Datas  {
         
 	}
 	
-	public static void FormFillup(WebDriver driver) {
-		driver.findElement(By.cssSelector("span.menu-icon-new-request")).click();
-		driver.findElement(By.id("recipient_name")).sendKeys(Name);
-		driver.findElement(By.id("e-post")).sendKeys(Email);
-		WebElement types = driver.findElement(By.cssSelector("select[name='type']"));
-        select(types, "customer");
-		WebElement Markets=driver.findElement(By.id("request-country-select"));
-		select(Markets, "1");
-		WebElement VrfTyp=driver.findElement(By.id("account_verification"));
-		select(VrfTyp, "false");
-		WebElement env=driver.findElement(By.id("env"));
-		select(env, "sandbox");
-		driver.findElement(By.id("submit-check")).click();
-	}
-	public static void Login(WebDriver driver) {
-		driver.get(URL);
-		driver.findElement(By.id("kreditz_email")).sendKeys(Email);
-		driver.findElement(By.id("kreditz_current_password")).sendKeys(Password);
-		driver.findElement(By.cssSelector("button[type='submit']")).click();
-	}
-	
-	public static Select select(WebElement E, String S) {  
-		Select slct = new Select(E);
-		slct.selectByValue(S);
-		return slct;
-	}
 	
 
 }
