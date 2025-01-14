@@ -20,18 +20,7 @@ public class ManualRequest extends Datas  {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(15));
 		Login(driver);
-		driver.findElement(By.cssSelector("span.menu-icon-new-request")).click();
-		driver.findElement(By.id("recipient_name")).sendKeys(Name);
-		driver.findElement(By.id("e-post")).sendKeys(Email);
-		WebElement types = driver.findElement(By.cssSelector("select[name='type']"));
-        select(types, "customer");
-		WebElement Markets=driver.findElement(By.id("request-country-select"));
-		select(Markets, "1");
-		WebElement VrfTyp=driver.findElement(By.id("account_verification"));
-		select(VrfTyp, "false");
-		WebElement env=driver.findElement(By.id("env"));
-		select(env, "sandbox");
-		driver.findElement(By.id("submit-check")).click();
+		FormFillup(driver);
 		Thread.sleep(3000);
 		String URLs = driver.findElement(By.id("request_url_copy")).getAttribute("value");
 		driver.switchTo().newWindow(WindowType.TAB);
@@ -65,6 +54,20 @@ public class ManualRequest extends Datas  {
         
 	}
 	
+	public static void FormFillup(WebDriver driver) {
+		driver.findElement(By.cssSelector("span.menu-icon-new-request")).click();
+		driver.findElement(By.id("recipient_name")).sendKeys(Name);
+		driver.findElement(By.id("e-post")).sendKeys(Email);
+		WebElement types = driver.findElement(By.cssSelector("select[name='type']"));
+        select(types, "customer");
+		WebElement Markets=driver.findElement(By.id("request-country-select"));
+		select(Markets, "1");
+		WebElement VrfTyp=driver.findElement(By.id("account_verification"));
+		select(VrfTyp, "false");
+		WebElement env=driver.findElement(By.id("env"));
+		select(env, "sandbox");
+		driver.findElement(By.id("submit-check")).click();
+	}
 	public static void Login(WebDriver driver) {
 		driver.get(URL);
 		driver.findElement(By.id("kreditz_email")).sendKeys(Email);
@@ -77,5 +80,6 @@ public class ManualRequest extends Datas  {
 		slct.selectByValue(S);
 		return slct;
 	}
+	
 
 }
