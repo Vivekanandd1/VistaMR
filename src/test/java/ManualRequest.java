@@ -22,9 +22,7 @@ public class ManualRequest extends Datas  {
 		Login(driver);
 		FormFillup(driver);
 		Thread.sleep(3000);
-		String URLs = driver.findElement(By.id("request_url_copy")).getAttribute("value");
-		driver.switchTo().newWindow(WindowType.TAB);
-        driver.navigate().to(URLs);
+		Redirection(driver);
         Set<String> Wind = driver.getWindowHandles();
         Iterator<String> Winds = Wind.iterator();
         String Parent = Winds.next();
