@@ -13,25 +13,20 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class ManualRequest extends Datas  {
-	
+public class ManualRequest extends BaseLineTest  {
+
 	@Test
 	public void ManualRequests() throws InterruptedException {
-		WebDriver driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(15));
-		Login(driver);
-		FormFillup(driver);
+		data.FormFillup();
 		Thread.sleep(3000);
-		Redirection(driver);
+		data.Redirection();
         Set<String> Wind = driver.getWindowHandles();
         Iterator<String> Winds = Wind.iterator();
         String Parent = Winds.next();
         String Child = Winds.next();
         Thread.sleep(2000);
         driver.switchTo().defaultContent();
-        Consent(driver, wait);
+        data.Consent();
         driver.switchTo().window(Child);
         driver.switchTo().defaultContent();
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//p/a[text()='verifications@leovegas.com']")));
@@ -40,10 +35,7 @@ public class ManualRequest extends Datas  {
         driver.switchTo().window(Parent);
         System.out.println("turned for parent");
         Thread.sleep(2000);
-        driver.quit();
         
 	}
-	
-	
 
 }
