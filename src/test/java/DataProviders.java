@@ -13,14 +13,7 @@ import org.testng.annotations.Test;
 public class DataProviders {
 	
 	DataFormatter formatter = new DataFormatter();
-	
-	@Test(dataProvider = "driver")
-	public void runner(String name,String email,String Case) {
-		System.out.println("My name is "+name+" and my email is "+email+" with case id "+ Case);
-	}
-	
-	
-	
+		
 	@DataProvider(name="driver")
 	public Object[][] DataExcel() throws IOException {
 		FileInputStream fis = new FileInputStream("C:\\Users\\Admin\\Desktop\\Dataset.xlsx");
