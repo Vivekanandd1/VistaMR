@@ -13,11 +13,15 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class ManualRequest extends BaseLineTest  {
+public class ManualRequest extends BaseLineTest {
+	
+//	String Email = "snaps.deshmukh@gmail.com";
+//	String Password = "Password123";
 
-	@Test
-	public void ManualRequests() throws InterruptedException {
-		data.FormFillup();
+	@Test(dataProvider = "driver", dataProviderClass = DataProviders.class)
+	public void ManualRequests(String Email,String Password, String Name) throws InterruptedException {
+		data.Login(Email, Password);
+		data.FormFillup(Name, Email);
 		Thread.sleep(3000);
 		data.Redirection();
         Set<String> Wind = driver.getWindowHandles();
