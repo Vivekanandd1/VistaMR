@@ -1,20 +1,15 @@
-import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 
 public class Datas extends BaseLineTest{
 	
-	public static String Name = "Bruce Wayne";
+	String URL = "https://pre-vista.kreditz.com/login";
 	WebDriver driver;
 	WebDriverWait wait;
 	
@@ -36,7 +31,7 @@ public class Datas extends BaseLineTest{
         wait.until(ExpectedConditions.elementToBeClickable(SubmitBtn));
         SubmitBtn.click();
 	}
-	public void FormFillup() {
+	public void FormFillup(String Name, String Email) {
 		driver.findElement(By.cssSelector("span.menu-icon-new-request")).click();
 		driver.findElement(By.id("recipient_name")).sendKeys(Name);
 		driver.findElement(By.id("e-post")).sendKeys(Email);
@@ -64,7 +59,7 @@ public class Datas extends BaseLineTest{
         driver.navigate().to(URLs);
 	}
 	
-	public void Login() {
+	public void Login(String Email, String Password) {
 		driver.get(URL);
 		driver.findElement(By.id("kreditz_email")).sendKeys(Email);
 		driver.findElement(By.id("kreditz_current_password")).sendKeys(Password);
