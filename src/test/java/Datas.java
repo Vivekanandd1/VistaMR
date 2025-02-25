@@ -1,3 +1,6 @@
+import java.util.Iterator;
+import java.util.Set;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -64,6 +67,22 @@ public class Datas extends BaseLineTest{
 		driver.findElement(By.id("kreditz_email")).sendKeys(Email);
 		driver.findElement(By.id("kreditz_current_password")).sendKeys(Password);
 		driver.findElement(By.cssSelector("button[type='submit']")).click();
+	}
+	
+	public void WindowShuffleChild() {
+		  Set<String> Wind = driver.getWindowHandles();
+	        Iterator<String> Winds = Wind.iterator();
+	        String Parent = Winds.next();
+	        String Child = Winds.next();
+	        driver.switchTo().window(Child);
+	}
+	
+	public void WindowShuffleParent() {
+		  Set<String> Wind = driver.getWindowHandles();
+	        Iterator<String> Winds = Wind.iterator();
+	        String Parent = Winds.next();
+	        String Child = Winds.next();
+	        driver.switchTo().window(Parent);
 	}
 	
 
