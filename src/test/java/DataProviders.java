@@ -20,7 +20,7 @@ public class DataProviders {
 		XSSFRow row = sheet.getRow(0);
 		int colcount = row.getLastCellNum();
 		System.out.println(colcount);
-		System.out.println(rowcount);
+		System.out.println("Rowcount is "+ rowcount);
 		//-1
 		Object data[][] = new Object[rowcount-1][rowcount];
 		for(int i=0;i<rowcount-1;i++) {

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-02-25T17:08:29 IST" name="Default suite" finished-at="2025-02-25T17:10:32 IST" duration-ms="122200">
+    <groups>
+    </groups>
+    <test started-at="2025-02-25T17:08:29 IST" name="Default test" finished-at="2025-02-25T17:10:32 IST" duration-ms="122200">
+      <class name="ManualRequest">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:ManualRequest@1fa121e2]" started-at="2025-02-25T17:08:31 IST" name="launchApp" finished-at="2025-02-25T17:08:34 IST" duration-ms="3079" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="ManualRequests(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:ManualRequest@1fa121e2]" started-at="2025-02-25T17:08:34 IST" name="ManualRequests" data-provider="driver" finished-at="2025-02-25T17:09:31 IST" duration-ms="57230" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[snaps.deshmukh@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Password123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Saul Goodman]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ManualRequests -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:ManualRequest@1fa121e2]" started-at="2025-02-25T17:09:31 IST" name="teardown" finished-at="2025-02-25T17:09:32 IST" duration-ms="485" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:ManualRequest@1fa121e2]" started-at="2025-02-25T17:09:32 IST" name="launchApp" finished-at="2025-02-25T17:09:33 IST" duration-ms="1941" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="ManualRequests(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:ManualRequest@1fa121e2]" started-at="2025-02-25T17:09:33 IST" name="ManualRequests" data-provider="driver" finished-at="2025-02-25T17:10:31 IST" duration-ms="57678" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[snaps.deshmukh@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Password123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Bryan Adams]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ManualRequests -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:ManualRequest@1fa121e2]" started-at="2025-02-25T17:10:31 IST" name="teardown" finished-at="2025-02-25T17:10:32 IST" duration-ms="413" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- ManualRequest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

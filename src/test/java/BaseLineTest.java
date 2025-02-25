@@ -34,21 +34,6 @@ public class BaseLineTest {
 		driver.quit();
 	}
 	
-	public void WindowShuffleChild() {
-		  Set<String> Wind = driver.getWindowHandles();
-	        Iterator<String> Winds = Wind.iterator();
-	        String Parent = Winds.next();
-	        String Child = Winds.next();
-	        driver.switchTo().window(Child);
-	}
-	
-	public void WindowShuffleParent() {
-		  Set<String> Wind = driver.getWindowHandles();
-	        Iterator<String> Winds = Wind.iterator();
-	        String Parent = Winds.next();
-	        String Child = Winds.next();
-	        driver.switchTo().window(Parent);
-	}
 	
 	public void Pageload() throws InterruptedException {
         Thread.sleep(2000);
