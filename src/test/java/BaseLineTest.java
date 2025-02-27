@@ -34,7 +34,6 @@ public class BaseLineTest {
 		driver.quit();
 	}
 	
-	
 	public void Pageload() throws InterruptedException {
         Thread.sleep(2000);
 

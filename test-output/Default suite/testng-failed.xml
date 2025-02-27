@@ -5,7 +5,7 @@
     <classes>
       <class name="ManualRequest">
         <methods>
-          <include name="ManualRequests" invocation-numbers="0 1"/>
+          <include name="ManualRequests"/>
           <include name="teardown"/>
           <include name="launchApp"/>
         </methods>
