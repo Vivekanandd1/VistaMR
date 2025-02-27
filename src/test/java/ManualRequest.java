@@ -4,12 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 
-public class ManualRequest extends BaseLineTest {
+public class ManualRequest extends BaseLineTest  {
 
 //	String Email = "snaps.deshmukh@gmail.com";
 //	String Password = "Password123";
 
-	@Test(dataProvider = "driver", dataProviderClass = DataProviders.class)
+	@Test(dataProvider = "drivers", dataProviderClass = DataProviders.class)
 	public void ManualRequests(String Email, String Password, String Name) throws InterruptedException {
 		data.Login(Email, Password);
 		data.FormFillup(Name, Email);

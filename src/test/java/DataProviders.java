@@ -55,9 +55,7 @@ public class DataProviders {
 		ResultSet rs = s.executeQuery("select * from UserInfo where name='Dany Marcus'");
 		while (rs.next()) {
 			dataList.add(new String[] { rs.getString("Email"), rs.getString("Password"), rs.getString("Name") });
-		
 		}
-		
 		 return dataList.toArray(new Object[0][]);
 	}
 

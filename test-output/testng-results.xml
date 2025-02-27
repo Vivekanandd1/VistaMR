@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-25T17:08:29 IST" name="Default suite" finished-at="2025-02-25T17:10:32 IST" duration-ms="122200">
+  <suite started-at="2025-02-26T12:50:20 IST" name="Default suite" finished-at="2025-02-26T12:51:34 IST" duration-ms="74036">
     <groups>
     </groups>
-    <test started-at="2025-02-25T17:08:29 IST" name="Default test" finished-at="2025-02-25T17:10:32 IST" duration-ms="122200">
+    <test started-at="2025-02-26T12:50:20 IST" name="Default test" finished-at="2025-02-26T12:51:34 IST" duration-ms="74036">
       <class name="ManualRequest">
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:ManualRequest@1fa121e2]" started-at="2025-02-25T17:08:31 IST" name="launchApp" finished-at="2025-02-25T17:08:34 IST" duration-ms="3079" status="PASS">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:ManualRequest@74e52ef6]" started-at="2025-02-26T12:50:21 IST" name="launchApp" finished-at="2025-02-26T12:50:33 IST" duration-ms="11675" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method signature="ManualRequests(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:ManualRequest@1fa121e2]" started-at="2025-02-25T17:08:34 IST" name="ManualRequests" data-provider="driver" finished-at="2025-02-25T17:09:31 IST" duration-ms="57230" status="PASS">
+        <test-method signature="ManualRequests(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:ManualRequest@74e52ef6]" started-at="2025-02-26T12:50:33 IST" name="ManualRequests" data-provider="drivers" finished-at="2025-02-26T12:51:33 IST" duration-ms="60452" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -25,43 +25,14 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[Saul Goodman]]>
+                <![CDATA[Dany Marcus]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ManualRequests -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:ManualRequest@1fa121e2]" started-at="2025-02-25T17:09:31 IST" name="teardown" finished-at="2025-02-25T17:09:32 IST" duration-ms="485" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:ManualRequest@1fa121e2]" started-at="2025-02-25T17:09:32 IST" name="launchApp" finished-at="2025-02-25T17:09:33 IST" duration-ms="1941" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApp -->
-        <test-method signature="ManualRequests(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:ManualRequest@1fa121e2]" started-at="2025-02-25T17:09:33 IST" name="ManualRequests" data-provider="driver" finished-at="2025-02-25T17:10:31 IST" duration-ms="57678" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[snaps.deshmukh@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Password123]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Bryan Adams]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ManualRequests -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:ManualRequest@1fa121e2]" started-at="2025-02-25T17:10:31 IST" name="teardown" finished-at="2025-02-25T17:10:32 IST" duration-ms="413" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:ManualRequest@74e52ef6]" started-at="2025-02-26T12:51:33 IST" name="teardown" finished-at="2025-02-26T12:51:34 IST" duration-ms="412" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
