@@ -30,9 +30,17 @@ public class Datas extends BaseLineTest{
         WebElement NextBtn = driver.findElement(By.id("next-btn"));
         wait.until(ExpectedConditions.elementToBeClickable(NextBtn));
         NextBtn.click();
+        WebElement SSNField = driver.findElement(By.id("ssn"));
         WebElement SubmitBtn = driver.findElement(By.id("submit"));
         wait.until(ExpectedConditions.elementToBeClickable(SubmitBtn));
+        wait.until(ExpectedConditions.elementToBeClickable(SSNField));
+        if(SSNField.isDisplayed()) {
+        	SSNField.sendKeys("201212121212");
+        	SubmitBtn.click();
+        }
+        else {
         SubmitBtn.click();
+        }
 	}
 	public void FormFillup(String Name, String Email) {
 		driver.findElement(By.cssSelector("span.menu-icon-new-request")).click();
