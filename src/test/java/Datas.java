@@ -32,13 +32,13 @@ public class Datas extends BaseLineTest{
         NextBtn.click();
         WebElement SSNField = driver.findElement(By.id("ssn"));
         WebElement SubmitBtn = driver.findElement(By.id("submit"));
-        wait.until(ExpectedConditions.elementToBeClickable(SubmitBtn));
         wait.until(ExpectedConditions.elementToBeClickable(SSNField));
         if(SSNField.isDisplayed()) {
         	SSNField.sendKeys("201212121212");
         	SubmitBtn.click();
         }
         else {
+        wait.until(ExpectedConditions.elementToBeClickable(SubmitBtn));	
         SubmitBtn.click();
         }
 	}
