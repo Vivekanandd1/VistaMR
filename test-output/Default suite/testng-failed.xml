@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ManualRequest">
+      <class name="MRqst.ManualRequest">
         <methods>
-          <include name="ManualRequests"/>
-          <include name="teardown"/>
+          <include name="ManualRequests" invocation-numbers="0"/>
           <include name="launchApp"/>
+          <include name="teardown"/>
         </methods>
-      </class> <!-- ManualRequest -->
+      </class> <!-- MRqst.ManualRequest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
