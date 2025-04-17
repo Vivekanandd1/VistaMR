@@ -1,3 +1,4 @@
+package MRqst;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
@@ -47,12 +48,12 @@ public class DataProviders {
 		return data;
 	}
 
-	@DataProvider(name = "drivers")
+	@DataProvider(name = "CredsDB")
 	public Object[][] DataDB() throws IOException, SQLException {
 		List<Object[]> dataList = new ArrayList<>();
 		Connection con = DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/UserCred", "root", "Root");
 		Statement s = con.createStatement();
-		ResultSet rs = s.executeQuery("select * from UserInfo where name='Dany Marcus'");
+		ResultSet rs = s.executeQuery("select * from UserInfo where name='Automation Request'");
 		while (rs.next()) {
 			dataList.add(new String[] { rs.getString("Email"), rs.getString("Password"), rs.getString("Name") });
 		}
