@@ -1,5 +1,6 @@
 package MRqst;
 import java.time.Duration;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -19,6 +20,7 @@ public class BaseLineTest {
 	public WebDriver start() {
 		ChromeOptions opt = new ChromeOptions();
 		opt.addArguments("guest");
+		opt.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
 		driver = new ChromeDriver(opt);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
