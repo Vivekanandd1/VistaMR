@@ -94,5 +94,13 @@ public class Datas extends BaseLineTest{
 	        driver.switchTo().window(Parent);
 	}
 	
+	public void Logout() {
+		WebElement Profile = driver.findElement(By.cssSelector("a.dropdown-toggle.dropdown-toggle-profile"));
+		wait.until(ExpectedConditions.elementToBeClickable(Profile));
+		Profile.click();
+		WebElement Logout = driver.findElement(By.xpath("//a[normalize-space()='Sign out']"));
+		wait.until(ExpectedConditions.elementToBeClickable(Logout));
+		Logout.click();
+	}
 
 }
