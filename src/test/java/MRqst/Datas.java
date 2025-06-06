@@ -1,7 +1,8 @@
 package MRqst;
+
+import java.time.LocalDateTime;
 import java.util.Iterator;
 import java.util.Set;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -16,6 +17,7 @@ public class Datas extends BaseLineTest{
 	String URL = "https://pre-vista.kreditz.com/login";
 	WebDriver driver;
 	WebDriverWait wait;
+	
 	
 	public Datas(WebDriver driver,WebDriverWait wait) {
 		this.driver=driver;
@@ -47,6 +49,7 @@ public class Datas extends BaseLineTest{
 		driver.findElement(By.cssSelector("span.menu-icon-new-request")).click();
 		driver.findElement(By.id("recipient_name")).sendKeys(Name);
 		driver.findElement(By.id("e-post")).sendKeys(Email);
+		driver.findElement(By.xpath("//input[@placeholder='Case id']")).sendKeys(LocalDateTime.now().toString());
 		WebElement types = driver.findElement(By.cssSelector("select[name='type']"));
         select(types, "customer");
 		WebElement Markets=driver.findElement(By.id("request-country-select"));
@@ -65,6 +68,7 @@ public class Datas extends BaseLineTest{
 		return slct;
 	}
 	
+	@SuppressWarnings("deprecation")
 	public void Redirection() {
 		String URLs = driver.findElement(By.id("request_url_copy")).getAttribute("value");
 		driver.switchTo().newWindow(WindowType.TAB);

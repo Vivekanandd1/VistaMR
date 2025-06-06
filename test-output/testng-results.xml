@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-17T17:03:19 IST" name="Default suite" finished-at="2025-04-17T17:03:40 IST" duration-ms="20749">
+  <suite started-at="2025-06-06T11:07:06 IST" name="Default suite" finished-at="2025-06-06T11:07:26 IST" duration-ms="19601">
     <groups>
     </groups>
-    <test started-at="2025-04-17T17:03:19 IST" name="Default test" finished-at="2025-04-17T17:03:40 IST" duration-ms="20749">
+    <test started-at="2025-06-06T11:07:06 IST" name="Default test" finished-at="2025-06-06T11:07:26 IST" duration-ms="19601">
       <class name="MRqst.ManualRequest">
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:MRqst.ManualRequest@1a75e76a]" started-at="2025-04-17T17:03:20 IST" name="launchApp" finished-at="2025-04-17T17:03:24 IST" duration-ms="3454" status="PASS">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:MRqst.ManualRequest@2767e23c]" started-at="2025-06-06T11:07:07 IST" name="launchApp" finished-at="2025-06-06T11:07:08 IST" duration-ms="1488" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method signature="ManualRequests(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:MRqst.ManualRequest@1a75e76a]" started-at="2025-04-17T17:03:24 IST" name="ManualRequests" data-provider="CredsDB" finished-at="2025-04-17T17:03:40 IST" duration-ms="15808" status="FAIL">
+        <test-method signature="ManualRequests(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:MRqst.ManualRequest@2767e23c]" started-at="2025-06-06T11:07:08 IST" name="ManualRequests" data-provider="CredsDB" finished-at="2025-06-06T11:07:25 IST" duration-ms="17164" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -29,16 +29,40 @@
               </value>
             </param>
           </params>
-          <exception class="java.lang.NullPointerException">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[unknown error: unhandled inspector error: {"code":-32000,"message":"Failed to open a new tab"}
+  (Session info: chrome=137.0.7151.57)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [14b5408e7d34d433447a53a457d923da, newWindow {type=tab}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.57, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61530}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61530/devtoo..., se:cdpVersion: 137.0.7151.57, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 14b5408e7d34d433447a53a457d923da]]>
+            </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at org.openqa.selenium.remote.RemoteWebElement.isEnabled(RemoteWebElement.java:183)
-at org.openqa.selenium.support.ui.Select.assertOptionIsEnabled(Select.java:424)
-at org.openqa.selenium.support.ui.Select.setSelected(Select.java:417)
-at org.openqa.selenium.support.ui.Select.selectByValue(Select.java:278)
-at MRqst.Datas.select(Datas.java:64)
-at MRqst.Datas.FormFillup(Datas.java:53)
-at MRqst.ManualRequest.ManualRequests(ManualRequest.java:14)
+              <![CDATA[org.openqa.selenium.WebDriverException: unknown error: unhandled inspector error: {"code":-32000,"message":"Failed to open a new tab"}
+  (Session info: chrome=137.0.7151.57)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [14b5408e7d34d433447a53a457d923da, newWindow {type=tab}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.57, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61530}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61530/devtoo..., se:cdpVersion: 137.0.7151.57, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 14b5408e7d34d433447a53a457d923da
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.newWindow(RemoteWebDriver.java:1169)
+at MRqst.Datas.Redirection(Datas.java:74)
+at MRqst.ManualRequest.ManualRequests(ManualRequest.java:16)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -69,11 +93,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ManualRequests -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:MRqst.ManualRequest@1a75e76a]" started-at="2025-04-17T17:03:40 IST" name="teardown" finished-at="2025-04-17T17:03:40 IST" duration-ms="296" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:MRqst.ManualRequest@2767e23c]" started-at="2025-06-06T11:07:25 IST" name="teardown" finished-at="2025-06-06T11:07:26 IST" duration-ms="298" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
