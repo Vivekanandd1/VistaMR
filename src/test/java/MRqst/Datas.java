@@ -68,9 +68,10 @@ public class Datas extends BaseLineTest{
 		return slct;
 	}
 	
-	@SuppressWarnings("deprecation")
-	public void Redirection() {
+	
+	public void Redirection() throws InterruptedException {
 		String URLs = driver.findElement(By.id("request_url_copy")).getAttribute("value");
+		Thread.sleep(2000);
 		driver.switchTo().newWindow(WindowType.TAB);
         driver.navigate().to(URLs);
 	}
