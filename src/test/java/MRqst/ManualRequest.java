@@ -3,13 +3,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 
+import com.github.javafaker.Faker;
+
+
 public class ManualRequest extends BaseLineTest  {
 
-//	String Email = "snaps.deshmukh@gmail.com";
-//	String Password = "Password123";
+String Name;
 
 	@Test(dataProvider = "CredsDB", dataProviderClass = DataProviders.class)
-	public void ManualRequests(String Email, String Password, String Name) throws InterruptedException {
+	public void ManualRequests(String Email, String Password) throws InterruptedException {
+		Faker faker = new Faker();
+		Name = faker.name().fullName();
 		data.Login(Email, Password);
 		data.FormFillup(Name, Email);
 		data.Pageload();
@@ -26,5 +30,7 @@ public class ManualRequest extends BaseLineTest  {
 		System.out.println("turned for parent");
 		data.Pageload();
 	}
+	
+	
 
 }
