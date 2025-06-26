@@ -56,7 +56,9 @@ public class DataProviders {
 		Statement s = con.createStatement();
 		ResultSet rs = s.executeQuery("select * from UserInfo where name='Automation Request'");
 		while (rs.next()) {
-			dataList.add(new String[] { rs.getString("Email"), rs.getString("Password"), rs.getString("Name") });
+			//dataList.add(new String[] { rs.getString("Email"), rs.getString("Password"), rs.getString("Name") });
+			/*Name is getting from faker library*/
+			dataList.add(new String[] { rs.getString("Email"), rs.getString("Password") });
 		}
 		 return dataList.toArray(new Object[0][]);
 	}
