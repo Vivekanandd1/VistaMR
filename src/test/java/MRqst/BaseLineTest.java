@@ -17,23 +17,35 @@ public class BaseLineTest {
 	WebDriver driver;
 	WebDriverWait wait;
 	public Datas data;
+	String Browser = "edge";
 	
 
 	public WebDriver start() {
     /*Chrome setup*/
-//		ChromeOptions opt = new ChromeOptions();
-//		opt.addArguments("guest");
-//		opt.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
-//		driver = new ChromeDriver(opt);
-		
-//		EdgeOptions opt = new EdgeOptions();
-//		opt.addArguments("guest");
-//		opt.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
-//		driver = new EdgeDriver(opt);
+		if(Browser.equalsIgnoreCase("chrome")) {
+			ChromeOptions opt = new ChromeOptions();
+			opt.addArguments("guest");
+			opt.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+			driver = new ChromeDriver(opt);
+		}
+
+		else if(Browser.equalsIgnoreCase("edge")) {
+		EdgeOptions opt = new EdgeOptions();
+		opt.addArguments("guest");
+		opt.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+		driver = new EdgeDriver(opt);
+		}
 		
 		/*This is something we have to make more dynamic*/
-		
+		else if(Browser.equalsIgnoreCase("firefox")) {
 		driver = new FirefoxDriver();
+		}
+		
+		else {
+			System.out.println("Might be browser value is wrong or FW not equipped with this browser "+ Browser);
+		}
+		
+		
 		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
