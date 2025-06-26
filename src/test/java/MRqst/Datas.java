@@ -71,8 +71,12 @@ public class Datas extends BaseLineTest{
 	
 	public void Redirection() throws InterruptedException {
 		String URLs = driver.findElement(By.id("request_url_copy")).getAttribute("value");
-		Thread.sleep(2000);
+		int retryCount=0;
+		while(retryCount>0) {
 		driver.switchTo().newWindow(WindowType.TAB);
+		Thread.sleep(2000);
+		retryCount++;
+		}
         driver.navigate().to(URLs);
 	}
 	
