@@ -1,4 +1,4 @@
-package MRqst;
+package Testcases;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import com.github.javafaker.Faker;
 
 import AbstractComponent.BaseLineTest;
+import MRqst.DataProviders;
 
 
 public class ManualRequest extends BaseLineTest  {
