@@ -1,8 +1,9 @@
-package MRqst;
+package Testcases;
 
 import org.testng.annotations.Test;
 
 import AbstractComponent.BaseLineTest;
+import MRqst.DataProviders;
 
 public class LoginLogout extends BaseLineTest{
 	
