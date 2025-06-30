@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-06T11:07:06 IST" name="Default suite" finished-at="2025-06-06T11:07:26 IST" duration-ms="19601">
+  <suite started-at="2025-06-26T10:17:02 IST" name="Default suite" finished-at="2025-06-26T10:17:40 IST" duration-ms="38348">
     <groups>
     </groups>
-    <test started-at="2025-06-06T11:07:06 IST" name="Default test" finished-at="2025-06-06T11:07:26 IST" duration-ms="19601">
+    <test started-at="2025-06-26T10:17:02 IST" name="Default test" finished-at="2025-06-26T10:17:40 IST" duration-ms="38348">
       <class name="MRqst.ManualRequest">
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:MRqst.ManualRequest@2767e23c]" started-at="2025-06-06T11:07:07 IST" name="launchApp" finished-at="2025-06-06T11:07:08 IST" duration-ms="1488" status="PASS">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:MRqst.ManualRequest@304bb45b]" started-at="2025-06-26T10:17:03 IST" name="launchApp" finished-at="2025-06-26T10:17:07 IST" duration-ms="3256" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method signature="ManualRequests(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:MRqst.ManualRequest@2767e23c]" started-at="2025-06-06T11:07:08 IST" name="ManualRequests" data-provider="CredsDB" finished-at="2025-06-06T11:07:25 IST" duration-ms="17164" status="FAIL">
+        <test-method signature="ManualRequests(java.lang.String,java.lang.String)[pri:0, instance:MRqst.ManualRequest@304bb45b]" started-at="2025-06-26T10:17:07 IST" name="ManualRequests" data-provider="CredsDB" finished-at="2025-06-26T10:17:39 IST" duration-ms="31938" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -23,32 +23,29 @@
                 <![CDATA[Password123]]>
               </value>
             </param>
-            <param index="2">
-              <value>
-                <![CDATA[Automation Request]]>
-              </value>
-            </param>
           </params>
-          <exception class="org.openqa.selenium.WebDriverException">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[unknown error: unhandled inspector error: {"code":-32000,"message":"Failed to open a new tab"}
-  (Session info: chrome=137.0.7151.57)
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//a[normalize-space()='Nordea']"}
+  (Session info: MicrosoftEdge=137.0.3296.93)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.27.0', revision: 'd6e718d134'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.20'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [14b5408e7d34d433447a53a457d923da, newWindow {type=tab}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.57, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61530}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61530/devtoo..., se:cdpVersion: 137.0.7151.57, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 14b5408e7d34d433447a53a457d923da]]>
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [cc7446f55e8cc9be2deaf09e0db41cc9, findElement {using=xpath, value=//a[normalize-space()='Nordea']}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 137.0.3296.93, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:62910}, msedge: {msedgedriverVersion: 137.0.3296.93 (114b4a913acd..., userDataDir: C:\Users\Admin\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62910/devtoo..., se:cdpVersion: 137.0.3296.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cc7446f55e8cc9be2deaf09e0db41cc9]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: unknown error: unhandled inspector error: {"code":-32000,"message":"Failed to open a new tab"}
-  (Session info: chrome=137.0.7151.57)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[normalize-space()='Nordea']"}
+  (Session info: MicrosoftEdge=137.0.3296.93)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.27.0', revision: 'd6e718d134'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.20'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [14b5408e7d34d433447a53a457d923da, newWindow {type=tab}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.57, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61530}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61530/devtoo..., se:cdpVersion: 137.0.7151.57, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 14b5408e7d34d433447a53a457d923da
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [cc7446f55e8cc9be2deaf09e0db41cc9, findElement {using=xpath, value=//a[normalize-space()='Nordea']}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 137.0.3296.93, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:62910}, msedge: {msedgedriverVersion: 137.0.3296.93 (114b4a913acd..., userDataDir: C:\Users\Admin\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62910/devtoo..., se:cdpVersion: 137.0.3296.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cc7446f55e8cc9be2deaf09e0db41cc9
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -60,9 +57,12 @@ at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.ja
 at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.newWindow(RemoteWebDriver.java:1169)
-at MRqst.Datas.Redirection(Datas.java:74)
-at MRqst.ManualRequest.ManualRequests(ManualRequest.java:16)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+at MRqst.Datas.Consent(Datas.java:28)
+at MRqst.ManualRequest.ManualRequests(ManualRequest.java:23)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -93,11 +93,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ManualRequests -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:MRqst.ManualRequest@2767e23c]" started-at="2025-06-06T11:07:25 IST" name="teardown" finished-at="2025-06-06T11:07:26 IST" duration-ms="298" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:MRqst.ManualRequest@304bb45b]" started-at="2025-06-26T10:17:39 IST" name="teardown" finished-at="2025-06-26T10:17:40 IST" duration-ms="1723" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
