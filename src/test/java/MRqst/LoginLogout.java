@@ -2,6 +2,8 @@ package MRqst;
 
 import org.testng.annotations.Test;
 
+import AbstractComponent.BaseLineTest;
+
 public class LoginLogout extends BaseLineTest{
 	
 	@Test(dataProvider = "CredsDB", dataProviderClass = DataProviders.class)

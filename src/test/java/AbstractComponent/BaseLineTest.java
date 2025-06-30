@@ -1,4 +1,4 @@
-package MRqst;
+package AbstractComponent;
 import java.time.Duration;
 import java.util.Collections;
 
@@ -12,10 +12,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import MRqst.Datas;
+
 public class BaseLineTest {
 
-	WebDriver driver;
-	WebDriverWait wait;
+	public WebDriver driver;
+	public WebDriverWait wait;
 	public Datas data;
 	String Browser = "edge";
 	
