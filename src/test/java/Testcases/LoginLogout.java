@@ -3,7 +3,7 @@ package Testcases;
 import org.testng.annotations.Test;
 
 import AbstractComponent.BaseLineTest;
-import MRqst.DataProviders;
+import DataSources.DataProviders;
 
 public class LoginLogout extends BaseLineTest{
 	

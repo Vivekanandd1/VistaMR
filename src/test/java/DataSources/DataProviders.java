@@ -1,4 +1,4 @@
-package MRqst;
+package DataSources;
 
 import java.io.FileInputStream;
 import java.io.IOException;
