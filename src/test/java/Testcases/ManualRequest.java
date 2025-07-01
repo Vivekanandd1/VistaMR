@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import com.github.javafaker.Faker;
 
 import AbstractComponent.BaseLineTest;
-import MRqst.DataProviders;
+import DataSources.DataProviders;
 
 
 public class ManualRequest extends BaseLineTest  {
