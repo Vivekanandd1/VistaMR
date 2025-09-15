@@ -1,6 +1,5 @@
 package DataSources;
 
-import java.io.Console;
 import java.time.LocalDateTime;
 import java.util.Iterator;
 import java.util.Set;
@@ -8,12 +7,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WindowType;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-
 import AbstractComponent.BaseLineTest;
 
 public class Datas extends BaseLineTest {
@@ -21,6 +17,9 @@ public class Datas extends BaseLineTest {
 	String URL = "https://pre-vista.kreditz.com/login";
 	WebDriver driver;
 	WebDriverWait wait;
+    WebElement Nordea;
+    WebElement Handlesbanken;
+	
 
 	public Datas(WebDriver driver, WebDriverWait wait) {
 		this.driver = driver;
@@ -28,11 +27,12 @@ public class Datas extends BaseLineTest {
 	}
 
 	public void Consent() {
-		WebElement Bank = driver.findElement(By.xpath("//a[normalize-space()='Nordea']"));
-		wait.until(ExpectedConditions.elementToBeClickable(Bank));
+		Nordea = driver.findElement(By.xpath("//a[normalize-space()='Nordea']"));
+		Handlesbanken = driver.findElement(By.xpath("//a[normalize-space()='Handelsbanken']"));
+		wait.until(ExpectedConditions.elementToBeClickable(Handlesbanken));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,950)");
-		Bank.click();
+		Handlesbanken.click();
 		WebElement NextBtn = driver.findElement(By.id("next-btn"));
 		wait.until(ExpectedConditions.elementToBeClickable(NextBtn));
 		NextBtn.click();
@@ -75,35 +75,35 @@ public class Datas extends BaseLineTest {
 //		Thread.sleep(2000);
 //		driver.switchTo().newWindow(WindowType.TAB);
 //		driver.navigate().to(URLs);
-		
-		 String url = driver.findElement(By.id("request_url_copy")).getAttribute("value");
-		    String originalWindow = driver.getWindowHandle();
-		    int retryCount = 0;
-		    boolean success = false;
 
-		    while (retryCount < 3 && !success) {
-		        try {
-		            ((JavascriptExecutor) driver).executeScript("window.open(arguments[0], '_blank');", url);
-		            Thread.sleep(2000);
+		String url = driver.findElement(By.id("request_url_copy")).getAttribute("value");
+		String originalWindow = driver.getWindowHandle();
+		int retryCount = 0;
+		boolean success = false;
 
-		            Set<String> allWindows = driver.getWindowHandles();
-		            for (String win : allWindows) {
-		                if (!win.equals(originalWindow)) {
-		                    driver.switchTo().window(win);
-		                    success = true;
-		                    break;
-		                }
-		            }
-		        } catch (Exception e) {
-		            retryCount++;
-		            Thread.sleep(2000);
-		        }
-		    }
+		while (retryCount < 3 && !success) {
+			try {
+				((JavascriptExecutor) driver).executeScript("window.open(arguments[0], '_blank');", url);
+				Thread.sleep(2000);
 
-		    if (!success) {
-		        throw new RuntimeException("failed to open url in new tab after retries");
-		    }
-		
+				Set<String> allWindows = driver.getWindowHandles();
+				for (String win : allWindows) {
+					if (!win.equals(originalWindow)) {
+						driver.switchTo().window(win);
+						success = true;
+						break;
+					}
+				}
+			} catch (Exception e) {
+				retryCount++;
+				Thread.sleep(2000);
+			}
+		}
+
+		if (!success) {
+			throw new RuntimeException("failed to open url in new tab after retries");
+		}
+
 //		int retryCount = 0;
 //		boolean success = false;
 //		while (retryCount < 3 && !success) {
