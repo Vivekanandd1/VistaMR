@@ -52,7 +52,10 @@ public class Datas extends BaseLineTest {
 		driver.findElement(By.cssSelector("span.menu-icon-new-request")).click();
 		driver.findElement(By.id("recipient_name")).sendKeys(Name);
 		driver.findElement(By.id("e-post")).sendKeys(Email);
-		driver.findElement(By.xpath("//input[@placeholder='Case id']")).sendKeys(LocalDateTime.now().toString());
+		WebElement EngCaseID = driver.findElement(By.xpath("//input[@placeholder='Case id']"));
+//		WebElement PortCaseID = driver.findElement(By.xpath("//input[@placeholder='ID de caso']"));		
+        EngCaseID.sendKeys(LocalDateTime.now().toString());
+		
 		WebElement types = driver.findElement(By.cssSelector("select[name='type']"));
 		select(types, "customer");
 		WebElement Markets = driver.findElement(By.id("request-country-select"));
