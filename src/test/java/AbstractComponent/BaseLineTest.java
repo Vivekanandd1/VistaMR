@@ -10,7 +10,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import DataSources.Datas;
+
+import Pages.Datas;
+import Pages.UserCreation;
 
 
 public class BaseLineTest {
@@ -18,6 +20,7 @@ public class BaseLineTest {
 	public WebDriver driver;
 	public WebDriverWait wait;
 	public Datas data;
+	public UserCreation User;
 	String Browser = "chrome";
 	String appUrl = "https://pre-vista.kreditz.com/login";
 	
@@ -57,6 +60,7 @@ public class BaseLineTest {
 	public Datas launchApp() {
 		driver = start();
 		data = new Datas(driver, wait);
+		User = new UserCreation(driver, wait);
 		 driver.get(appUrl);
 		return data;
 	}
