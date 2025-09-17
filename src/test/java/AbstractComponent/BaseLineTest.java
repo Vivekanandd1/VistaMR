@@ -19,6 +19,7 @@ public class BaseLineTest {
 	public WebDriverWait wait;
 	public Datas data;
 	String Browser = "chrome";
+	String appUrl = "https://pre-vista.kreditz.com/login";
 	
 
 	public WebDriver start() {
@@ -45,9 +46,7 @@ public class BaseLineTest {
 		else {
 			System.out.println("Might be browser value is wrong or FW not equipped with this browser "+ Browser);
 		}
-		
-		
-		
+
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		wait = new WebDriverWait(driver, Duration.ofMinutes(15));
@@ -58,17 +57,19 @@ public class BaseLineTest {
 	public Datas launchApp() {
 		driver = start();
 		data = new Datas(driver, wait);
+		 driver.get(appUrl);
 		return data;
 	}
 
 	@AfterMethod
 	public void teardown() {
-		driver.quit();
+		 if (driver != null) {
+	            driver.quit();
+	        }
 	}
 	
 	public void Pageload() throws InterruptedException {
-        Thread.sleep(2000);
-
+		 Thread.sleep(2000);
 	}
 
 }
