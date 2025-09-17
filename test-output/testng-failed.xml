@@ -5,7 +5,7 @@
     <classes>
       <class name="Testcases.ManualRequest">
         <methods>
-          <include name="ManualRequests"/>
+          <include name="ManualRequests" invocation-numbers="0"/>
           <include name="teardown"/>
           <include name="launchApp"/>
         </methods>

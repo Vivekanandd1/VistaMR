@@ -11,7 +11,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
-import PageObjects.Datas;
+import DataSources.Datas;
+
+
 
 public class BaseInfra {
 	
