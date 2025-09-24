@@ -14,7 +14,7 @@ import AbstractComponent.BaseLineTest;
 
 public class Datas extends BaseLineTest {
 
-	String URL = "https://pre-vista.kreditz.com/login";
+	String URL = "https://vista.kreditz-dev.com/login";
 	WebDriver driver;
 	WebDriverWait wait;
     WebElement Nordea;
@@ -112,6 +112,8 @@ public class Datas extends BaseLineTest {
 		driver.findElement(By.id("kreditz_email")).sendKeys(Email);
 		driver.findElement(By.id("kreditz_current_password")).sendKeys(Password);
 		driver.findElement(By.cssSelector("button[type='submit']")).click();
+		driver.findElement(By.xpath("//div[contains(@class,'custom-dropdown-language')]")).click();
+		driver.findElement(By.xpath("(//a[normalize-space()='English'])[2]")).click();
 	}
 
 	public void WindowShuffleChild() {

@@ -22,7 +22,7 @@ public class BaseLineTest {
 	public Datas data;
 	public UserCreation User;
 	String Browser = "chrome";
-	String appUrl = "https://pre-vista.kreditz.com/login";
+	String appUrl = "https://vista.kreditz-dev.com/login";
 	
 
 	public WebDriver start() {
@@ -61,6 +61,7 @@ public class BaseLineTest {
 		driver = start();
 		data = new Datas(driver, wait);
 		User = new UserCreation(driver, wait);
+		
 		 driver.get(appUrl);
 		return data;
 	}
