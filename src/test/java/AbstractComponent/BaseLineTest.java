@@ -61,6 +61,7 @@ public class BaseLineTest {
 		driver = start();
 		data = new Datas(driver, wait);
 		User = new UserCreation(driver, wait);
+		
 		 driver.get(appUrl);
 		return data;
 	}
