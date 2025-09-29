@@ -1,13 +1,11 @@
 package Testcases;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.Test;
-
 import AbstractComponent.BaseLineTest;
 import DataSources.DataProviders;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
+import org.testng.annotations.Test;
 
 public class LoginLogout extends BaseLineTest{
 	
