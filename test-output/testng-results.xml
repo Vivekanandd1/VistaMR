@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-24T21:17:26 IST" name="Default suite" finished-at="2025-09-24T21:17:56 IST" duration-ms="30461">
+  <suite started-at="2025-09-29T18:34:41 IST" name="Suite" finished-at="2025-09-29T18:40:24 IST" duration-ms="343406">
     <groups>
     </groups>
-    <test started-at="2025-09-24T21:17:26 IST" name="Default test" finished-at="2025-09-24T21:17:56 IST" duration-ms="30461">
+    <test started-at="2025-09-29T18:34:41 IST" name="Test" finished-at="2025-09-29T18:40:24 IST" duration-ms="343406">
       <class name="Testcases.CreateUser">
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:Testcases.CreateUser@54089484]" started-at="2025-09-24T21:17:27 IST" name="launchApp" finished-at="2025-09-24T21:17:35 IST" duration-ms="7998" status="PASS">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:Testcases.CreateUser@1c3259fa]" started-at="2025-09-29T18:39:26 IST" name="launchApp" finished-at="2025-09-29T18:40:00 IST" duration-ms="34175" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method signature="LogIn(java.lang.String,java.lang.String)[pri:0, instance:Testcases.CreateUser@54089484]" started-at="2025-09-24T21:17:35 IST" name="LogIn" data-provider="CredsDB" finished-at="2025-09-24T21:17:56 IST" duration-ms="20615" status="PASS">
+        <test-method signature="LogIn(java.lang.String,java.lang.String)[pri:0, instance:Testcases.CreateUser@1c3259fa]" started-at="2025-09-29T18:40:00 IST" name="LogIn" data-provider="CredsDB" finished-at="2025-09-29T18:40:22 IST" duration-ms="22178" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -27,11 +27,120 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LogIn -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:Testcases.CreateUser@54089484]" started-at="2025-09-24T21:17:56 IST" name="teardown" finished-at="2025-09-24T21:17:56 IST" duration-ms="578" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:Testcases.CreateUser@1c3259fa]" started-at="2025-09-29T18:40:22 IST" name="teardown" finished-at="2025-09-29T18:40:24 IST" duration-ms="1910" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- Testcases.CreateUser -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="Testcases.ManualRequest">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:Testcases.ManualRequest@2c07545f]" started-at="2025-09-29T18:34:42 IST" name="launchApp" finished-at="2025-09-29T18:36:03 IST" duration-ms="81460" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="ManualRequests(java.lang.String,java.lang.String)[pri:0, instance:Testcases.ManualRequest@2c07545f]" started-at="2025-09-29T18:36:03 IST" name="ManualRequests" data-provider="CredsDB" finished-at="2025-09-29T18:37:53 IST" duration-ms="109512" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[snaps.deshmukh@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Password123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ManualRequests -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:Testcases.ManualRequest@2c07545f]" started-at="2025-09-29T18:37:53 IST" name="teardown" finished-at="2025-09-29T18:37:55 IST" duration-ms="2046" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- Testcases.ManualRequest -->
+      <class name="Testcases.LoginLogout">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:Testcases.LoginLogout@6eb2384f]" started-at="2025-09-29T18:37:55 IST" name="launchApp" finished-at="2025-09-29T18:38:36 IST" duration-ms="40673" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="LogIn(java.lang.String,java.lang.String)[pri:0, instance:Testcases.LoginLogout@6eb2384f]" started-at="2025-09-29T18:38:36 IST" name="LogIn" data-provider="CredsDB" finished-at="2025-09-29T18:39:24 IST" duration-ms="48364" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[snaps.deshmukh@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Password123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogIn -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:Testcases.LoginLogout@6eb2384f]" started-at="2025-09-29T18:39:24 IST" name="teardown" finished-at="2025-09-29T18:39:26 IST" duration-ms="1906" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="LogOut()[pri:0, instance:Testcases.LoginLogout@6eb2384f]" started-at="2025-09-29T18:40:24 IST" name="LogOut" finished-at="2025-09-29T18:40:24 IST" duration-ms="3" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, findElement {value=a.dropdown-toggle.dropdown-toggle-profile, using=css selector}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.186, chrome: {chromedriverVersion: 140.0.7339.207 (17230b545fd..., userDataDir: C:\WINDOWS\TEMP\scoped_dir2...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54375}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54375/devtoo..., se:cdpVersion: 140.0.7339.186, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, findElement {value=a.dropdown-toggle.dropdown-toggle-profile, using=css selector}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.186, chrome: {chromedriverVersion: 140.0.7339.207 (17230b545fd..., userDataDir: C:\WINDOWS\TEMP\scoped_dir2...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54375}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54375/devtoo..., se:cdpVersion: 140.0.7339.186, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:176)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+at Pages.Datas.Logout(Datas.java:136)
+at Testcases.LoginLogout.LogOut(LoginLogout.java:25)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:663)
+at org.testng.TestRunner.afterRun(TestRunner.java:933)
+at org.testng.TestRunner.run(TestRunner.java:624)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogOut -->
+      </class> <!-- Testcases.LoginLogout -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
