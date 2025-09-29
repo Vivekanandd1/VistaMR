@@ -17,14 +17,10 @@ public class LoginLogout extends BaseLineTest{
 	@Test(dataProvider = "CredsDB", dataProviderClass = DataProviders.class)
 	public void LogIn(String Email, String Password) throws InterruptedException {
 		data.Login(Email, Password);			
-	}
-	
-	
-	@AfterTest()
-	public void LogOut() {
 		data.Logout();
 		String ActualTitles = driver.getTitle();
 		Assert.assertEquals(ActualTitles, "Kreditz | Vista");
 	}
+	
 
 }
