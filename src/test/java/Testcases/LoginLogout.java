@@ -21,5 +21,4 @@ public class LoginLogout extends BaseLineTest{
 	}
 	
 
-
 }
