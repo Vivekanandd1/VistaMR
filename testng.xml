@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="AllureSuite">
-	<listeners>
-		<listener class-name="io.qameta.allure.testng.AllureTestNg" />
-	</listeners>
 	<test thread-count="5" name="AllureTest">
 		<classes>
 			<class name="Testcases.ManualRequest" />
@@ -12,5 +9,5 @@
 		</classes>
 	</test> <!--
 	Test -->
-</suite> <!--
+</suite> <!---->
 
