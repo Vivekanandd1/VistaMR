@@ -3,12 +3,15 @@ package Testcases;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.github.javafaker.Faker;
 import AbstractComponent.BaseLineTest;
 import DataSources.DataProviders;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
+import io.qameta.allure.testng.AllureTestNg;
+
 
 
 public class ManualRequest extends BaseLineTest  {
