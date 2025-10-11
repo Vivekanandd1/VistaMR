@@ -1,10 +1,13 @@
 package Pages;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -17,9 +20,8 @@ public class Datas extends BaseLineTest {
 	String URL = "https://vista.kreditz-dev.com/login";
 	WebDriver driver;
 	WebDriverWait wait;
-    WebElement Nordea;
-    WebElement Handlesbanken;
-	
+	WebElement Nordea;
+	WebElement Handlesbanken;
 
 	public Datas(WebDriver driver, WebDriverWait wait) {
 		this.driver = driver;
@@ -50,11 +52,12 @@ public class Datas extends BaseLineTest {
 
 	public void FormFillup(String Name, String Email) {
 		driver.findElement(By.cssSelector("span.menu-icon-new-request")).click();
-		driver.findElement(By.id("recipient_name")).sendKeys(Name);
+		WebElement RecName = driver.findElement(By.id("recipient_name"));
+		wait.until(ExpectedConditions.elementToBeClickable(RecName));
+		RecName.sendKeys(Name);
 		driver.findElement(By.id("e-post")).sendKeys(Email);
 		WebElement EngCaseID = driver.findElement(By.xpath("//input[@placeholder='Case id']"));
-        EngCaseID.sendKeys(LocalDateTime.now().toString());
-		
+		EngCaseID.sendKeys(LocalDateTime.now().toString());
 		WebElement types = driver.findElement(By.cssSelector("select[name='type']"));
 		select(types, "customer");
 		WebElement Markets = driver.findElement(By.id("request-country-select"));
@@ -109,11 +112,55 @@ public class Datas extends BaseLineTest {
 	}
 
 	public void Login(String Email, String Password) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+		// Enter credentials
 		driver.findElement(By.id("kreditz_email")).sendKeys(Email);
 		driver.findElement(By.id("kreditz_current_password")).sendKeys(Password);
 		driver.findElement(By.cssSelector("button[type='submit']")).click();
-		driver.findElement(By.xpath("//div[contains(@class,'custom-dropdown-language')]")).click();
-		driver.findElement(By.xpath("(//a[normalize-space()='English'])[2]")).click();
+
+		// Click the language Dropdown and wait for it
+		WebElement langDropdown = wait.until(ExpectedConditions
+				.elementToBeClickable(By.xpath("//div[contains(@class,'custom-dropdown-language')]")));
+		langDropdown.click();
+
+		// English option in list if English is preselected
+		WebElement BaseEnglish = driver.findElement(By.xpath("//a[contains(@onclick,'English')]"));
+		// List of possible language locators
+		By[] languages = { By.xpath("//a[normalize-space()='Engelska']"), By.xpath("//a[normalize-space()='Englisch']"),
+				By.xpath("//a[normalize-space()='Inglés']") };
+
+		boolean languageSelected = false;
+
+		if (BaseEnglish.isDisplayed() == true) {
+			BaseEnglish.click();
+			System.out.println("English is Preselected");
+		}
+
+		else {
+			for (By langLocator : languages) {
+				try {
+					WebElement langElement = driver.findElement(langLocator);
+					if (langElement.isDisplayed()) {
+						wait.until(ExpectedConditions.elementToBeClickable(langElement)).click();
+						languageSelected = true;
+						WebElement submitBtn = wait.until(ExpectedConditions.elementToBeClickable(By.id("button_id")));
+						submitBtn.click();
+						System.out.println("✅ Login completed successfully with language selection.");
+						break;
+					}
+				} catch (NoSuchElementException e) {
+					// Ignore and continue checking next
+				}
+			}
+
+			if (!languageSelected) {
+				System.out.println("❌ Language selection failed — no matching option found.");
+			}
+		}
+
+		// Click final submit button
+
 	}
 
 	public void WindowShuffleChild() {
@@ -133,7 +180,7 @@ public class Datas extends BaseLineTest {
 	}
 
 	public void Logout() {
-		WebElement Profile = driver.findElement(By.cssSelector("a.dropdown-toggle.dropdown-toggle-profile"));
+		WebElement Profile = driver.findElement(By.xpath("//div[contains(@class,'dropdown-username-profile')]"));
 		wait.until(ExpectedConditions.elementToBeClickable(Profile));
 		Profile.click();
 		WebElement Logout = driver.findElement(By.xpath("//a[normalize-space()='Sign out']"));
