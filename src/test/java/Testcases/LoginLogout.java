@@ -21,6 +21,5 @@ public class LoginLogout extends BaseLineTest{
 		String ActualTitles = driver.getTitle();
 		Assert.assertEquals(ActualTitles, "Kreditz | Vista");
 	}
-	
 
 }
