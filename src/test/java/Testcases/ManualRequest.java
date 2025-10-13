@@ -3,14 +3,12 @@ package Testcases;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.github.javafaker.Faker;
 import AbstractComponent.BaseLineTest;
 import DataSources.DataProviders;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
-import io.qameta.allure.testng.AllureTestNg;
 
 
 
@@ -21,7 +19,7 @@ String Name;
 
     @Description("This test case is for E2E manual request completion")
     @Owner("Vivekanand Deshmukh")
-	@Test(dataProvider = "CredsDB", dataProviderClass = DataProviders.class)
+	@Test(dataProvider = "driver", dataProviderClass = DataProviders.class)
 	public void ManualRequests(String Email, String Password) throws InterruptedException {
 		Faker faker = new Faker();
 		Name = faker.name().fullName();
