@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-10-11T07:21:47 IST" name="Default suite" finished-at="2025-10-11T07:22:16 IST" duration-ms="29217">
+  <suite started-at="2025-10-13T17:47:13 IST" name="Default suite" finished-at="2025-10-13T17:47:47 IST" duration-ms="33779">
     <groups>
     </groups>
-    <test started-at="2025-10-11T07:21:47 IST" name="Default test" finished-at="2025-10-11T07:22:16 IST" duration-ms="29217">
+    <test started-at="2025-10-13T17:47:13 IST" name="Default test" finished-at="2025-10-13T17:47:47 IST" duration-ms="33779">
       <class name="Testcases.LoginLogout">
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:Testcases.LoginLogout@53f6fd09]" started-at="2025-10-11T07:21:48 IST" name="launchApp" finished-at="2025-10-11T07:21:59 IST" duration-ms="11400" status="PASS">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:Testcases.LoginLogout@48e92c5c]" started-at="2025-10-13T17:47:16 IST" name="launchApp" finished-at="2025-10-13T17:47:31 IST" duration-ms="15930" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method signature="LogIn(java.lang.String,java.lang.String)[pri:0, instance:Testcases.LoginLogout@53f6fd09]" started-at="2025-10-11T07:22:00 IST" name="LogIn" data-provider="CredsDB" finished-at="2025-10-11T07:22:15 IST" duration-ms="15583" status="PASS">
+        <test-method signature="LogIn(java.lang.String,java.lang.String)[pri:0, instance:Testcases.LoginLogout@48e92c5c]" started-at="2025-10-13T17:47:32 IST" name="LogIn" data-provider="driver" finished-at="2025-10-13T17:47:47 IST" duration-ms="14843" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -27,7 +27,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LogIn -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:Testcases.LoginLogout@53f6fd09]" started-at="2025-10-11T07:22:15 IST" name="teardown" finished-at="2025-10-11T07:22:16 IST" duration-ms="550" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:Testcases.LoginLogout@48e92c5c]" started-at="2025-10-13T17:47:47 IST" name="teardown" finished-at="2025-10-13T17:47:47 IST" duration-ms="471" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
