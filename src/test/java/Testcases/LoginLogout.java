@@ -14,7 +14,7 @@ public class LoginLogout extends BaseLineTest{
 	
 	@Description("This test case is for Login/Logout functinality")
     @Owner("Vivekanand Deshmukh")
-	@Test(dataProvider = "CredsDB", dataProviderClass = DataProviders.class)
+	@Test(dataProvider = "driver", dataProviderClass = DataProviders.class)
 	public void LogIn(String Email, String Password) throws InterruptedException {
 		data.Login(Email, Password);			
 		data.Logout();

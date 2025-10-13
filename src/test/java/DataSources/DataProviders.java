@@ -26,26 +26,28 @@ public class DataProviders {
 
 	@DataProvider(name = "driver")
 	public Object[][] DataExcel() throws IOException {
-		FileInputStream fis = new FileInputStream("C:\\Users\\Admin\\Desktop\\Dataset.xlsx");
-		XSSFWorkbook wb = new XSSFWorkbook(fis);
-		XSSFSheet sheet = wb.getSheetAt(0);
-		int rowcount = sheet.getPhysicalNumberOfRows();
-		XSSFRow row = sheet.getRow(0);
-		int colcount = row.getLastCellNum();
-		System.out.println(colcount);
-		System.out.println("Rowcount is " + rowcount);
-		// -1
-		Object data[][] = new Object[rowcount - 1][rowcount];
-		for (int i = 0; i < rowcount - 1; i++) {
-			System.out.println("Outerloop");
-			row = sheet.getRow(i + 1);
-			for (int j = 0; j < colcount; j++) {
-				System.out.println(row.getCell(j));
-				XSSFCell cell = row.getCell(j);
-				data[i][j] = formatter.formatCellValue(cell);
-			}
-		}
-		return data;
+		 try (FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\src\\test\\resources\\Dataset.xlsx");
+		         XSSFWorkbook wb = new XSSFWorkbook(fis)) {
+
+		        XSSFSheet sheet = wb.getSheetAt(0);
+		        int rowcount = sheet.getPhysicalNumberOfRows();
+		        int colcount = sheet.getRow(0).getLastCellNum();
+
+		        System.out.println("Rowcount: " + rowcount);
+		        System.out.println("Colcount: " + colcount);
+
+		        Object data[][] = new Object[rowcount - 1][colcount];
+		        DataFormatter formatter = new DataFormatter();
+
+		        for (int i = 1; i < rowcount; i++) {
+		            XSSFRow row = sheet.getRow(i);
+		            for (int j = 0; j < colcount; j++) {
+		                XSSFCell cell = row.getCell(j);
+		                data[i - 1][j] = formatter.formatCellValue(cell);
+		            }
+		        }
+		        return data;
+		    }
 	}
 
 	@DataProvider(name = "CredsDB")
