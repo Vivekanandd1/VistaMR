@@ -12,6 +12,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
+
+import Pages.APICall;
 import Pages.Datas;
 import Pages.UserCreation;
 
@@ -23,6 +25,7 @@ public class BaseLineTest {
 	public WebDriverWait wait;
 	public Datas data;
 	public UserCreation User;
+	public APICall API;
 	String Browser = "chrome";
 	String appUrl = "https://vista.kreditz-dev.com/login";
 	
@@ -63,6 +66,7 @@ public class BaseLineTest {
 		driver = start();
 		data = new Datas(driver, wait);
 		User = new UserCreation(driver, wait);
+		API = new APICall(driver, wait);
 		driver.get(appUrl);
 		return data;
 	}
