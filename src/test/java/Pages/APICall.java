@@ -45,7 +45,7 @@ public class APICall extends BaseLineTest {
 		res.baseUri("https://vista.kreditz-dev.com");
 		res.basePath("/kreditz/api/v3/authorizations/access_token");
 		res.queryParam("client_id", "c71f1c07cb4b46f074c2592d1c7761").queryParam("client_secret", Secret);
-		
+
 		Response response = res.post();
 		ResponseBody<?> resBody = response.getBody();
 		JsonPath JsnPth = resBody.jsonPath();
