@@ -30,7 +30,6 @@ public class Datas extends BaseLineTest {
 	public void Consent() {
 		Nordea = driver.findElement(By.xpath("//a[normalize-space()='Nordea']"));
 		Handlesbanken = driver.findElement(By.xpath("//a[normalize-space()='Handelsbanken']"));
-		wait.until(ExpectedConditions.elementToBeClickable(Handlesbanken));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,950)");
 		Handlesbanken.click();
@@ -75,38 +74,37 @@ public class Datas extends BaseLineTest {
 	}
 
 	public void Redirection() throws InterruptedException {
-//		String URLs = driver.findElement(By.id("request_url_copy")).getAttribute("value");
-//		Thread.sleep(2000);
-//		driver.switchTo().newWindow(WindowType.TAB);
-//		driver.navigate().to(URLs);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
-		String url = driver.findElement(By.id("request_url_copy")).getAttribute("value");
-		String originalWindow = driver.getWindowHandle();
-		int retryCount = 0;
-		boolean success = false;
+	    String url = driver.findElement(By.id("request_url_copy"))
+	                       .getAttribute("value");
 
-		while (retryCount < 3 && !success) {
-			try {
-				((JavascriptExecutor) driver).executeScript("window.open(arguments[0], '_blank');", url);
-				Thread.sleep(2000);
+	    if (url == null || url.isEmpty()) {
+	        throw new RuntimeException("URL is null or empty");
+	    }
 
-				Set<String> allWindows = driver.getWindowHandles();
-				for (String win : allWindows) {
-					if (!win.equals(originalWindow)) {
-						driver.switchTo().window(win);
-						success = true;
-						break;
-					}
-				}
-			} catch (Exception e) {
-				retryCount++;
-				Thread.sleep(2000);
-			}
-		}
+	    String originalWindow = driver.getWindowHandle();
 
-		if (!success) {
-			throw new RuntimeException("failed to open url in new tab after retries");
-		}
+	    // Open new tab
+	    ((JavascriptExecutor) driver)
+	            .executeScript("window.open(arguments[0], '_blank');", url);
+
+	    // Wait for new tab
+	    wait.until(ExpectedConditions.numberOfWindowsToBe(2));
+
+	    // Switch to new tab
+	    for (String windowHandle : driver.getWindowHandles()) {
+	        if (!windowHandle.equals(originalWindow)) {
+	            driver.switchTo().window(windowHandle);
+	            break;
+	        }
+	    }
+
+	    // Optional: wait until page is loaded
+//	    wait.until(webDriver ->
+//	            ((JavascriptExecutor) webDriver)
+//	                    .executeScript("return document.readyState")
+//	                    .equals("complete"));
 
 	}
 
