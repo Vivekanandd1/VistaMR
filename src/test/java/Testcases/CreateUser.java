@@ -22,6 +22,7 @@ public class CreateUser extends BaseLineTest {
 	public void UserCreation(String Email, String Password) throws InterruptedException {
 		data.Login(Email, Password);			
 		User.CreateUser(Fullname, Emails, PhoneNumber);
+		User.UserDeletion(Fullname);
 	}
 	
 	
