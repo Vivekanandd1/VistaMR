@@ -16,7 +16,7 @@ public class CreateUser extends BaseLineTest {
 	String Emails = faker.internet().emailAddress();
 	static String PhoneNumber = faker.numerify("##########");
 	
-	@Description("This test case is for UserCreation functinality")
+	@Description("This test case is for UserCreation functionality")
     @Owner("Vivekanand Deshmukh")
 	@Test(priority = 0,dataProvider = "driver", dataProviderClass = DataProviders.class)
 	public void UserCreation(String Email, String Password) throws InterruptedException {
