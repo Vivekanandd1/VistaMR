@@ -14,6 +14,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 
 import Pages.APICall;
+import Pages.BusinessRequest;
+import Pages.CertificateLogs;
 import Pages.Datas;
 import Pages.UserCreation;
 
@@ -26,6 +28,8 @@ public class BaseLineTest {
 	public Datas data;
 	public UserCreation User;
 	public APICall API;
+	public CertificateLogs CrtfctLgs;
+	public BusinessRequest BR;
 	String Browser = "chrome";
 	String appUrl = "https://vista.kreditz-dev.com/login";
 	
@@ -57,7 +61,7 @@ public class BaseLineTest {
 
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		wait = new WebDriverWait(driver, Duration.ofMinutes(15));
+		wait = new WebDriverWait(driver, Duration.ofMinutes(2));
 		return driver;
 	}
 
@@ -67,6 +71,8 @@ public class BaseLineTest {
 		data = new Datas(driver, wait);
 		User = new UserCreation(driver, wait);
 		API = new APICall(driver, wait);
+		CrtfctLgs = new CertificateLogs(driver, wait);
+		BR = new BusinessRequest(driver, wait);
 		driver.get(appUrl);
 		return data;
 	}
