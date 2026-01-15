@@ -10,7 +10,6 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import AbstractComponent.BaseLineTest;
 
@@ -28,24 +27,19 @@ public class Datas extends BaseLineTest {
 	}
 
 	public void Consent() {
-		Nordea = driver.findElement(By.xpath("//a[normalize-space()='Nordea']"));
-		Handlesbanken = driver.findElement(By.xpath("//a[normalize-space()='Handelsbanken']"));
+		By Nordea = By.xpath("//a[normalize-space()='Nordea']");
+		By Handlesbanken = By.xpath("//a[normalize-space()='Handelsbanken']");
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,950)");
-		Handlesbanken.click();
+		wait.until(ExpectedConditions.elementToBeClickable(Handlesbanken)).click();
+//		js.executeScript("arguments[0].click()",Handlesbanken);
 		WebElement NextBtn = driver.findElement(By.id("next-btn"));
-		wait.until(ExpectedConditions.elementToBeClickable(NextBtn));
-		NextBtn.click();
-		WebElement SSNField = driver.findElement(By.id("ssn"));
-		WebElement SubmitBtn = driver.findElement(By.id("submit"));
-		wait.until(ExpectedConditions.elementToBeClickable(SSNField));
-		if (SSNField.isDisplayed()) {
-			SSNField.sendKeys("201212121214");
-			SubmitBtn.click();
-		} else {
-			wait.until(ExpectedConditions.elementToBeClickable(SubmitBtn));
-			SubmitBtn.click();
-		}
+		wait.until(ExpectedConditions.elementToBeClickable(NextBtn)).click();
+		By SSNField = By.id("ssn");
+		By SubmitBtn = By.id("submit");
+		wait.until(ExpectedConditions.elementToBeClickable(SSNField)).sendKeys("201212121214");
+		wait.until(ExpectedConditions.elementToBeClickable(SubmitBtn)).click();
+		
 	}
 
 	public void FormFillup(String Name, String Email) {
@@ -67,11 +61,7 @@ public class Datas extends BaseLineTest {
 		driver.findElement(By.id("submit-check")).click();
 	}
 
-	public Select select(WebElement E, String S) {
-		Select slct = new Select(E);
-		slct.selectByValue(S);
-		return slct;
-	}
+
 
 	public void Redirection() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
