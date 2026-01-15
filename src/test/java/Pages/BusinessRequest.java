@@ -1,18 +1,11 @@
 package Pages;
 
-import java.time.Duration;
 import java.time.LocalDateTime;
-import java.util.Iterator;
-import java.util.Set;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import AbstractComponent.BaseLineTest;
 
 public class BusinessRequest extends BaseLineTest {
@@ -20,9 +13,23 @@ public class BusinessRequest extends BaseLineTest {
 	String URL = "https://vista.kreditz-dev.com/login";
 	WebDriver driver;
 	WebDriverWait wait;
-	WebElement Nordea;
-	WebElement Handlesbanken;
-
+	
+	By NewRequest = By.cssSelector("span.menu-icon-new-request");
+	By RecpName = By.id("recipient_name");
+	By EmailBox = By.id("e-post");
+    By CaseID = By.xpath("//input[@placeholder='Case id']");
+    By RequestTypes = By.cssSelector("select[name='type']");
+    By Markets = By.xpath("//select[@name='corporate_country_id']");
+    By VrfTyp = By.id("account_verification");
+    By Environment = By.id("env");
+    By SubmitBtn = By.id("submit-check");
+    By Nordea = By.xpath("//a[normalize-space()='Nordea']");
+	By Handlesbanken = By.xpath("//a[normalize-space()='Handelsbanken']");
+	By NextBtn = By.id("next-btn");
+	By SSNField = By.xpath("(//input[@id='ssn'])[1]");
+	By OrgNumber = By.xpath("(//input[@id='ssn'])[2]");
+	By ConinueBtn = (By.id("submit"));
+    
 	public BusinessRequest(WebDriver driver, WebDriverWait wait) {
 
 		this.driver = driver;
@@ -31,52 +38,27 @@ public class BusinessRequest extends BaseLineTest {
 	}
 
 	public void FormFillup(String Name, String Email) {
-		driver.findElement(By.cssSelector("span.menu-icon-new-request")).click();
-		WebElement RecName = driver.findElement(By.id("recipient_name"));
-		wait.until(ExpectedConditions.elementToBeClickable(RecName));
-		RecName.sendKeys(Name);
-		driver.findElement(By.id("e-post")).sendKeys(Email);
-		WebElement EngCaseID = driver.findElement(By.xpath("//input[@placeholder='Case id']"));
-		EngCaseID.sendKeys(LocalDateTime.now().toString());
-		WebElement types = driver.findElement(By.cssSelector("select[name='type']"));
-		select(types, "corporate");
-		WebElement Markets = driver.findElement(By.xpath("//select[@name='corporate_country_id']"));
-		wait.until(ExpectedConditions.visibilityOf(Markets));
-		select(Markets, "1");
-		WebElement VrfTyp = driver.findElement(By.id("account_verification"));
-		select(VrfTyp, "false");
-		WebElement env = driver.findElement(By.id("env"));
-		select(env, "sandbox");
-		driver.findElement(By.id("submit-check")).click();
+		driver.findElement(NewRequest).click();
+		wait.until(ExpectedConditions.elementToBeClickable(RecpName)).sendKeys(Name);
+		driver.findElement(EmailBox).sendKeys(Email);
+		driver.findElement(CaseID).sendKeys(LocalDateTime.now().toString());
+		select(driver.findElement(RequestTypes), "corporate");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(Markets));
+		select(driver.findElement(Markets), "1");
+		select(driver.findElement(VrfTyp), "false");
+		select(driver.findElement(Environment), "sandbox");
+		driver.findElement(SubmitBtn).click();
 	}
 
-	public Select select(WebElement E, String S) {
-		Select slct = new Select(E);
-		slct.selectByValue(S);
-		return slct;
-	}
 
 	public void Consent() {
-		Nordea = driver.findElement(By.xpath("//a[normalize-space()='Nordea']"));
-		Handlesbanken = driver.findElement(By.xpath("//a[normalize-space()='Handelsbanken']"));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,950)");
-		Handlesbanken.click();
-		WebElement NextBtn = driver.findElement(By.id("next-btn"));
-		wait.until(ExpectedConditions.elementToBeClickable(NextBtn));
-		NextBtn.click();
-		WebElement SSNField = driver.findElement(By.xpath("(//input[@id='ssn'])[1]"));
-		WebElement OrgNumber = driver.findElement(By.xpath("(//input[@id='ssn'])[2]"));
-		WebElement SubmitBtn = driver.findElement(By.id("submit"));
-		wait.until(ExpectedConditions.elementToBeClickable(SSNField));
-		if (SSNField.isDisplayed()) {
-			SSNField.sendKeys("201212121214");
-			OrgNumber.sendKeys("8899336624");
-			SubmitBtn.click();
-		} else {
-			wait.until(ExpectedConditions.elementToBeClickable(SubmitBtn));
-			SubmitBtn.click();
-		}
+		driver.findElement(Handlesbanken).click();
+		wait.until(ExpectedConditions.elementToBeClickable(NextBtn)).click();
+		wait.until(ExpectedConditions.elementToBeClickable(SSNField)).sendKeys("201212121214");
+		driver.findElement(OrgNumber).sendKeys("8899336624");
+		driver.findElement(ConinueBtn).click();
 	}
 
 }

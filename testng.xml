@@ -6,6 +6,8 @@
 			<class name="Testcases.ManualRequest" />
 			<class name="Testcases.LoginLogout" />
 			<class name="Testcases.CreateUser" />
+			<class name="Testcases.Dashboardfunctions" />
+			<class name="Testcases.CorporateRequest" />
 		</classes>
 	</test> <!--
 	Test -->

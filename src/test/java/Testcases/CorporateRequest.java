@@ -19,7 +19,7 @@ String Name;
     @Description("This test case is for E2E manual Corporate request completion")
     @Owner("Vivekanand Deshmukh")
 	@Test(dataProvider = "driver", dataProviderClass = DataProviders.class)
-	public void ManualRequests(String Email, String Password) throws InterruptedException {
+	public void ManualCorporateRequests(String Email, String Password) throws InterruptedException {
 		Faker faker = new Faker();
 		Name = faker.name().fullName();
 		data.Login(Email, Password);
