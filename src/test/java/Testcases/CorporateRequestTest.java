@@ -11,7 +11,7 @@ import io.qameta.allure.Owner;
 
 
 
-public class CorporateRequest extends BaseLineTest  {
+public class CorporateRequestTest extends BaseLineTest  {
 
 String Name;
      

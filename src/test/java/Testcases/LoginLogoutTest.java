@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 
 
-public class LoginLogout extends BaseLineTest{
+public class LoginLogoutTest extends BaseLineTest{
 	
 	
 	@Description("This test case is for Login/Logout functinality")

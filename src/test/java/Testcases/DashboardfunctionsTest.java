@@ -7,7 +7,7 @@ import DataSources.DataProviders;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
 
-public class Dashboardfunctions extends BaseLineTest {
+public class DashboardfunctionsTest extends BaseLineTest {
 	
 	String Certificatenumber = "51818";
 	

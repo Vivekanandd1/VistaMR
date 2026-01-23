@@ -12,7 +12,7 @@ import io.qameta.allure.Owner;
 
 
 
-public class ManualRequest extends BaseLineTest  {
+public class ManualRequestTest extends BaseLineTest  {
 
 String Name;
      
