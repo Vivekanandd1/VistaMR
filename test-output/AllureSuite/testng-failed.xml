@@ -3,13 +3,13 @@
 <suite name="Failed suite [AllureSuite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="AllureTest(failed)">
     <classes>
-      <class name="Testcases.ManualRequest">
+      <class name="Testcases.CreateUser">
         <methods>
-          <include name="ManualRequests" invocation-numbers="0"/>
           <include name="teardown"/>
+          <include name="UserCreation" invocation-numbers="0"/>
           <include name="launchApp"/>
         </methods>
-      </class> <!-- Testcases.ManualRequest -->
+      </class> <!-- Testcases.CreateUser -->
       <class name="Testcases.LoginLogout">
         <methods>
           <include name="LogIn" invocation-numbers="0"/>
@@ -17,13 +17,27 @@
           <include name="launchApp"/>
         </methods>
       </class> <!-- Testcases.LoginLogout -->
-      <class name="Testcases.CreateUser">
+      <class name="Testcases.Dashboardfunctions">
         <methods>
-          <include name="LogIn" invocation-numbers="0"/>
+          <include name="UserCreation" invocation-numbers="0"/>
           <include name="teardown"/>
           <include name="launchApp"/>
         </methods>
-      </class> <!-- Testcases.CreateUser -->
+      </class> <!-- Testcases.Dashboardfunctions -->
+      <class name="Testcases.CorporateRequest">
+        <methods>
+          <include name="teardown"/>
+          <include name="launchApp"/>
+          <include name="ManualCorporateRequests" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- Testcases.CorporateRequest -->
+      <class name="Testcases.ManualRequest">
+        <methods>
+          <include name="ManualRequests" invocation-numbers="0"/>
+          <include name="teardown"/>
+          <include name="launchApp"/>
+        </methods>
+      </class> <!-- Testcases.ManualRequest -->
     </classes>
   </test> <!-- AllureTest(failed) -->
 </suite> <!-- Failed suite [AllureSuite] -->

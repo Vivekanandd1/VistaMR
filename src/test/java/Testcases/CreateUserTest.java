@@ -9,7 +9,7 @@ import io.qameta.allure.Owner;
 
 
 
-public class CreateUser extends BaseLineTest {
+public class CreateUserTest extends BaseLineTest {
 	
 	static Faker faker = new Faker();
 	String Fullname = faker.name().fullName();
