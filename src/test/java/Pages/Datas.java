@@ -107,8 +107,8 @@ public class Datas extends BaseLineTest {
 		driver.findElement(By.cssSelector("button[type='submit']")).click();
 
 		// Click the language Dropdown and wait for it
-		WebElement langDropdown = driver.findElement(By.xpath("//div[contains(@class,'custom-dropdown-language')]"));
-		wait.until(ExpectedConditions.elementToBeClickable(langDropdown));		
+		By langDropdownLocator = By.xpath("//div[contains(@class,'custom-dropdown-language')]");
+		WebElement langDropdown =  wait.until(ExpectedConditions.elementToBeClickable(langDropdownLocator));		
 		langDropdown.click();
 
 		// English option in list if English is preselected
