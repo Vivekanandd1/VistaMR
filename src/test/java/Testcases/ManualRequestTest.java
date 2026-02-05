@@ -9,6 +9,7 @@ import AbstractComponent.BaseLineTest;
 import DataSources.DataProviders;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
+import io.qameta.allure.testng.Tag;
 
 
 
@@ -19,6 +20,7 @@ String Name;
 
     @Description("This test case is for E2E manual request completion")
     @Owner("Vivekanand Deshmukh")
+    @Tag("Manual Request")
 	@Test(dataProvider = "driver", dataProviderClass = DataProviders.class)
 	public void ManualRequests(String Email, String Password) throws InterruptedException {
 		Faker faker = new Faker();
