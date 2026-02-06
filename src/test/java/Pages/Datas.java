@@ -20,27 +20,27 @@ public class Datas extends BaseLineTest {
 	WebDriver driver;
 	WebDriverWait wait;
 
-	By Nordea = By.xpath("//a[normalize-space()='Nordea']");
-	By Handlesbanken = By.xpath("//a[normalize-space()='Handelsbanken']");
-	By RecName = By.id("recipient_name");
-	By NewReq = By.cssSelector("span.menu-icon-new-request");
-	By EmailBox = By.id("e-post");
-	By CaseIDBox = By.xpath("//input[@placeholder='Case id']");
-	By CertType = By.cssSelector("select[name='type']");
-	By Country = By.id("request-country-select");
-	By Mode = By.id("account_verification");
-	By Environment = By.id("env");
-	By FormSubmitBtn = By.id("submit-check");
-	By SSNField = By.id("ssn");
-	By SubmitBtn = By.id("submit");
-	By ReqURL = By.id("request_url_copy");
-	By LoginEmail = By.id("kreditz_email");
-	By LoginPassword = By.id("kreditz_current_password");
-	By LoginBtn = By.cssSelector("button[type='submit']");
-	By langDropdownLocator = By.xpath("//div[contains(@class,'custom-dropdown-language')]");
-	By Profile = By.xpath("//div[contains(@class,'dropdown-username-profile')]");
-	By LogoutBtn = By.xpath("//a[normalize-space()='Sign out']");
-	By NextBtn = By.id("next-btn");
+	private By Nordea = By.xpath("//a[normalize-space()='Nordea']");
+	private By Handlesbanken = By.xpath("//a[normalize-space()='Handelsbanken']");
+	private By RecName = By.id("recipient_name");
+	private By NewReq = By.cssSelector("span.menu-icon-new-request");
+	private By EmailBox = By.id("e-post");
+	private By CaseIDBox = By.xpath("//input[@placeholder='Case id']");
+	private By CertType = By.cssSelector("select[name='type']");
+	private By Country = By.id("request-country-select");
+	private By Mode = By.id("account_verification");
+	private By Environment = By.id("env");
+	private By FormSubmitBtn = By.id("submit-check");
+	private By SSNField = By.id("ssn");
+	private By SubmitBtn = By.id("submit");
+	private By ReqURL = By.id("request_url_copy");
+	private By LoginEmail = By.id("kreditz_email");
+	private By LoginPassword = By.id("kreditz_current_password");
+	private By LoginBtn = By.cssSelector("button[type='submit']");
+	private By langDropdownLocator = By.xpath("//div[contains(@class,'custom-dropdown-language')]");
+	private By Profile = By.xpath("//div[contains(@class,'dropdown-username-profile')]");
+	private By LogoutBtn = By.xpath("//a[normalize-space()='Sign out']");
+	private By NextBtn = By.id("next-btn");
 
 	public Datas(WebDriver driver, WebDriverWait wait) {
 		this.driver = driver;
