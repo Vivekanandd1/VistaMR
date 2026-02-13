@@ -20,27 +20,25 @@ public class CertificateLogs extends BaseLineTest {
 	private By CertificateResult = By.xpath("//tbody/tr/td[3]");
 	private By NoRecordsMessage = By.cssSelector(".container.below_text_center");
 
-
 	public CertificateLogs(WebDriver driver, WebDriverWait wait) {
 		this.driver = driver;
 		this.wait = wait;
 	}
 
-	public void CertificateSearch(String CertificateNumber) {
-		driver.findElement(SearchBox).sendKeys(CertificateNumber, Keys.ENTER);
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(Spinner));
-		wait.until(ExpectedConditions.or(ExpectedConditions.visibilityOfElementLocated(table),
-				ExpectedConditions.visibilityOfElementLocated(NoRecordsMessage)));
-		if (driver.findElements(table).size() > 0) {
+	public void CertificateSearch(String certificateNumber) {
 
-			WebElement result = wait.until(ExpectedConditions.visibilityOfElementLocated(CertificateResult));
+	    wait.until(ExpectedConditions.visibilityOfElementLocated(SearchBox)) .sendKeys(certificateNumber, Keys.ENTER);
+	    wait.until(ExpectedConditions.invisibilityOfElementLocated(Spinner));
+	    wait.until(ExpectedConditions.or(ExpectedConditions.visibilityOfElementLocated(table), ExpectedConditions.visibilityOfElementLocated(NoRecordsMessage)));
+	    if (driver.findElements(NoRecordsMessage).size() > 0 &&
+	            driver.findElement(NoRecordsMessage).isDisplayed()) {
+	        Assert.fail("Certificate number " + certificateNumber + " was not found");
 
-			Assert.assertEquals(result.getText().trim(), CertificateNumber, "Certificate number does not match");
-
-		} else {
-			Assert.fail("Certificate number " + CertificateNumber + " was not found");
-		}
-
+	    } else {
+	        WebElement result = wait.until(
+	                ExpectedConditions.visibilityOfElementLocated(CertificateResult));
+	        Assert.assertEquals(result.getText().trim(), certificateNumber, "Certificate number does not match");
+	    }
 	}
 
 }
