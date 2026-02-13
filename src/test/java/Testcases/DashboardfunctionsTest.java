@@ -15,7 +15,7 @@ public class DashboardfunctionsTest extends BaseLineTest {
 	@Description("This test case is for Dashboard Search and Filter Functionalities")
     @Owner("Vivekanand Deshmukh")
 	@Test(priority = 0,dataProvider = "driver", dataProviderClass = DataProviders.class)
-	public void UserCreation(String Email, String Password) throws InterruptedException {
+	public void CertSearch(String Email, String Password) throws InterruptedException {
 		data.Login(Email, Password);	
 		CrtfctLgs.CertificateSearch(Certificatenumber);
 		
