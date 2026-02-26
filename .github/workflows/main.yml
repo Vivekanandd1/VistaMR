@@ -21,17 +21,19 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Build with Maven
+      - name: Run Tests
         run: mvn clean test
 
-      - name: Install Allure
-        run: scoop install allure 
-
       - name: Generate Allure Report
-        run: allure generate allure-results --clean -o allure-report
+        uses: simple-elf/allure-report-action@v1.7
+        if: always()
+        with:
+          allure_results: allure-results
+          allure_report: allure-report
 
       - name: Upload Allure Report
         uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: Allure-Report
           path: allure-report
