@@ -31,7 +31,7 @@ public class DataProviders {
 	public Object[][] DataExcel() throws IOException {
 		 try (InputStream is = getClass()
 			        .getClassLoader()
-			        .getResourceAsStream("Dataset.xlsx");
+			        .getResourceAsStream("DataSet.xlsx");
 
 			XSSFWorkbook wb = new XSSFWorkbook(is);){
 
