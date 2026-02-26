@@ -2,6 +2,7 @@ package DataSources;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -16,6 +17,8 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.annotations.DataProvider;
 
+import com.github.javafaker.File;
+
 public class DataProviders {
 
 	String[] cred;
@@ -26,8 +29,11 @@ public class DataProviders {
 
 	@DataProvider(name = "driver")
 	public Object[][] DataExcel() throws IOException {
-		 try (FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\src\\test\\resources\\Dataset.xlsx");
-		         XSSFWorkbook wb = new XSSFWorkbook(fis)) {
+		 try (InputStream is = getClass()
+			        .getClassLoader()
+			        .getResourceAsStream("Dataset.xlsx");
+
+			XSSFWorkbook wb = new XSSFWorkbook(is);){
 
 		        XSSFSheet sheet = wb.getSheetAt(0);
 		        int rowcount = sheet.getPhysicalNumberOfRows();
