@@ -1,4 +1,5 @@
 package AbstractComponent;
+
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Collections;
@@ -20,8 +21,7 @@ import Pages.CertificateLogs;
 import Pages.Datas;
 import Pages.UserCreation;
 
-
-@Listeners({io.qameta.allure.testng.AllureTestNg.class})
+@Listeners({ io.qameta.allure.testng.AllureTestNg.class })
 public class BaseLineTest {
 
 	public WebDriver driver;
@@ -33,31 +33,38 @@ public class BaseLineTest {
 	public BusinessRequest BR;
 	String Browser = "chrome";
 	String appUrl = "https://vista.kreditz-dev.com/login";
-	
 
 	public WebDriver start() throws IOException {
-    /*Chrome setup*/
-		if(Browser.equalsIgnoreCase("chrome")) {
-			ChromeOptions opt = new ChromeOptions();
-			opt.addArguments("--incognito");
-			opt.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
-			driver = new ChromeDriver(opt);
+		/* Chrome setup */
+		if (Browser.equalsIgnoreCase("chrome")) {
+			ChromeOptions options = new ChromeOptions();
+			String headless = System.getProperty("headless");
+
+			if ("true".equalsIgnoreCase(headless)) {
+				options.addArguments("--headless=new");
+				options.addArguments("--no-sandbox");
+				options.addArguments("--disable-dev-shm-usage");
+			}
+
+			options.addArguments("--incognito");
+			options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+			driver = new ChromeDriver(options);
 		}
 
-		else if(Browser.equalsIgnoreCase("edge")) {
-		EdgeOptions opt = new EdgeOptions();
-		opt.addArguments("guest");
-		opt.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
-		driver = new EdgeDriver(opt);
+		else if (Browser.equalsIgnoreCase("edge")) {
+			EdgeOptions opt = new EdgeOptions();
+			opt.addArguments("guest");
+			opt.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+			driver = new EdgeDriver(opt);
 		}
-		
-		/*This is something we have to make more dynamic*/
-		else if(Browser.equalsIgnoreCase("firefox")) {
-		driver = new FirefoxDriver();
+
+		/* This is something we have to make more dynamic */
+		else if (Browser.equalsIgnoreCase("firefox")) {
+			driver = new FirefoxDriver();
 		}
-		
+
 		else {
-			System.out.println("Might be browser value is wrong or FW not equipped with this browser "+ Browser);
+			System.out.println("Might be browser value is wrong or FW not equipped with this browser " + Browser);
 		}
 
 		driver.manage().window().maximize();
@@ -80,15 +87,15 @@ public class BaseLineTest {
 
 	@AfterMethod
 	public void teardown() {
-		 if (driver != null) {
-	            driver.quit();
-	        }
+		if (driver != null) {
+			driver.quit();
+		}
 	}
-	
+
 	public void Pageload() throws InterruptedException {
-		 Thread.sleep(2000);
+		Thread.sleep(2000);
 	}
-	
+
 	public Select select(WebElement E, String S) {
 		Select slct = new Select(E);
 		slct.selectByValue(S);

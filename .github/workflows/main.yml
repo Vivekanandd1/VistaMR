@@ -22,7 +22,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Run Tests
-        run: mvn clean test
+        run: mvn clean test -Dheadless=true
 
       - name: Install Allure
         run: |
