@@ -56,7 +56,7 @@ jobs:
         if: always()
         uses: slackapi/slack-github-action@v1.24.0
         with:
-        payload: |
+          payload: |
             {
               "text": "🚀 Automation Execution Completed\nRepository: ${{ github.repository }}\nStatus: ${{ job.status }}\nReport: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
             }
