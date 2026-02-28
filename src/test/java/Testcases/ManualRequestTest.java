@@ -6,23 +6,27 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.github.javafaker.Faker;
 import AbstractComponent.BaseLineTest;
-import DataSources.DataProviders;
+import DataSources.ConfigReader;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
 import io.qameta.allure.testng.Tag;
 
+public class ManualRequestTest extends BaseLineTest {
 
+	String Name;
 
-public class ManualRequestTest extends BaseLineTest  {
+	@Description("This test case is for E2E manual request completion")
+	@Owner("Vivekanand Deshmukh")
+	@Tag("Manual Request")
+	@Test
+	public void ManualRequests() throws InterruptedException {
 
-String Name;
-     
+		String Email = ConfigReader.get("Email");
+		String Password = ConfigReader.get("Password");
 
-    @Description("This test case is for E2E manual request completion")
-    @Owner("Vivekanand Deshmukh")
-    @Tag("Manual Request")
-	@Test(dataProvider = "driver", dataProviderClass = DataProviders.class)
-	public void ManualRequests(String Email, String Password) throws InterruptedException {
+		if (Email == null || Password == null) {
+			throw new RuntimeException("Credentials not configured!");
+		}
 		Faker faker = new Faker();
 		Name = faker.name().fullName();
 		data.Login(Email, Password);
@@ -41,6 +45,5 @@ String Name;
 		String ActualTitle = driver.getTitle();
 		Assert.assertEquals(ActualTitle, "Kreditz | Vista - New request");
 	}
-
 
 }

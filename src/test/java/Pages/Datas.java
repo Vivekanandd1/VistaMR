@@ -102,6 +102,7 @@ public class Datas extends BaseLineTest {
 	}
 
 	public void Login(String Email, String Password) {
+		
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 		// Enter credentials

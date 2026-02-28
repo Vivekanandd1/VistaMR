@@ -22,6 +22,9 @@ jobs:
           distribution: 'temurin'
 
       - name: Run Tests
+        env:
+          Email: ${{ secrets.Email }}
+          Password: ${{ secrets.Password }}
         run: mvn clean test -Dheadless=true
 
       - name: Install Allure
