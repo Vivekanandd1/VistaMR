@@ -15,6 +15,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
+
+import DataSources.ConfigReader;
 import Pages.APICall;
 import Pages.BusinessRequest;
 import Pages.CertificateLogs;
@@ -33,6 +35,7 @@ public class BaseLineTest {
 	public BusinessRequest BR;
 	String Browser = "chrome";
 	String appUrl = "https://vista.kreditz-dev.com/login";
+
 
 	public WebDriver start() throws IOException {
 		/* Chrome setup */

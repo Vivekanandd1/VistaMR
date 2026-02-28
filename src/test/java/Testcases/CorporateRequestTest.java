@@ -1,25 +1,30 @@
 package Testcases;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.github.javafaker.Faker;
 import AbstractComponent.BaseLineTest;
-import DataSources.DataProviders;
+import DataSources.ConfigReader;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
 
+public class CorporateRequestTest extends BaseLineTest {
 
+	String Name;
 
-public class CorporateRequestTest extends BaseLineTest  {
+	@Description("This test case is for E2E manual Corporate request completion")
+	@Owner("Vivekanand Deshmukh")
+	@Test
+	public void ManualCorporateRequests() throws InterruptedException {
+		String Email = ConfigReader.get("Email");
+		String Password = ConfigReader.get("Password");
 
-String Name;
-     
+		if (Email == null || Password == null) {
+			throw new RuntimeException("Credentials not configured!");
+		}
 
-    @Description("This test case is for E2E manual Corporate request completion")
-    @Owner("Vivekanand Deshmukh")
-	@Test(dataProvider = "driver", dataProviderClass = DataProviders.class)
-	public void ManualCorporateRequests(String Email, String Password) throws InterruptedException {
 		Faker faker = new Faker();
 		Name = faker.name().fullName();
 		data.Login(Email, Password);
@@ -38,6 +43,5 @@ String Name;
 		String ActualTitle = driver.getTitle();
 		Assert.assertEquals(ActualTitle, "Kreditz | Vista - New request");
 	}
-
 
 }

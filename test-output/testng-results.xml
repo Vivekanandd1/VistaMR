@@ -1,141 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-21T12:42:52 IST" name="AllureSuite" finished-at="2026-01-21T12:49:20 IST" duration-ms="388264">
+  <suite started-at="2026-02-27T12:56:42 IST" name="Default suite" finished-at="2026-02-27T12:56:55 IST" duration-ms="13174">
     <groups>
     </groups>
-    <test started-at="2026-01-21T12:42:52 IST" name="AllureTest" finished-at="2026-01-21T12:49:20 IST" duration-ms="388264">
-      <class name="Testcases.CreateUser">
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:Testcases.CreateUser@d48e998]" started-at="2026-01-21T12:46:16 IST" name="launchApp" finished-at="2026-01-21T12:46:25 IST" duration-ms="9023" status="PASS">
+    <test started-at="2026-02-27T12:56:42 IST" name="Default test" finished-at="2026-02-27T12:56:55 IST" duration-ms="13174">
+      <class name="Testcases.LoginLogoutTest">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:Testcases.LoginLogoutTest@53de625d]" started-at="2026-02-27T12:56:42 IST" name="launchApp" finished-at="2026-02-27T12:56:48 IST" duration-ms="5860" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method signature="UserCreation(java.lang.String,java.lang.String)[pri:0, instance:Testcases.CreateUser@d48e998]" started-at="2026-01-21T12:46:25 IST" name="UserCreation" data-provider="driver" finished-at="2026-01-21T12:46:39 IST" duration-ms="13104" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[snaps.deshmukh@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Vivek1234567]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- UserCreation -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:Testcases.CreateUser@d48e998]" started-at="2026-01-21T12:46:39 IST" name="teardown" finished-at="2026-01-21T12:46:39 IST" duration-ms="242" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- Testcases.CreateUser -->
-      <class name="Testcases.ManualRequest">
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:Testcases.ManualRequest@6c0d9d86]" started-at="2026-01-21T12:42:53 IST" name="launchApp" finished-at="2026-01-21T12:42:59 IST" duration-ms="6735" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApp -->
-        <test-method signature="ManualRequests(java.lang.String,java.lang.String)[pri:0, instance:Testcases.ManualRequest@6c0d9d86]" started-at="2026-01-21T12:42:59 IST" name="ManualRequests" data-provider="driver" finished-at="2026-01-21T12:46:02 IST" duration-ms="182977" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[snaps.deshmukh@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Vivek1234567]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ManualRequests -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:Testcases.ManualRequest@6c0d9d86]" started-at="2026-01-21T12:46:02 IST" name="teardown" finished-at="2026-01-21T12:46:03 IST" duration-ms="287" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- Testcases.ManualRequest -->
-      <class name="Testcases.CorporateRequest">
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:Testcases.CorporateRequest@158ae284]" started-at="2026-01-21T12:46:52 IST" name="launchApp" finished-at="2026-01-21T12:47:00 IST" duration-ms="8309" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApp -->
-        <test-method signature="ManualCorporateRequests(java.lang.String,java.lang.String)[pri:0, instance:Testcases.CorporateRequest@158ae284]" started-at="2026-01-21T12:47:00 IST" name="ManualCorporateRequests" data-provider="driver" finished-at="2026-01-21T12:49:20 IST" duration-ms="139810" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[snaps.deshmukh@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Vivek1234567]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ManualCorporateRequests -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:Testcases.CorporateRequest@158ae284]" started-at="2026-01-21T12:49:20 IST" name="teardown" finished-at="2026-01-21T12:49:20 IST" duration-ms="281" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- Testcases.CorporateRequest -->
-      <class name="Testcases.LoginLogout">
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:Testcases.LoginLogout@691939c9]" started-at="2026-01-21T12:46:03 IST" name="launchApp" finished-at="2026-01-21T12:46:09 IST" duration-ms="6311" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApp -->
-        <test-method signature="LogIn(java.lang.String,java.lang.String)[pri:0, instance:Testcases.LoginLogout@691939c9]" started-at="2026-01-21T12:46:09 IST" name="LogIn" data-provider="driver" finished-at="2026-01-21T12:46:16 IST" duration-ms="6992" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[snaps.deshmukh@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Vivek1234567]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="LogIn()[pri:0, instance:Testcases.LoginLogoutTest@53de625d]" started-at="2026-02-27T12:56:48 IST" name="LogIn" finished-at="2026-02-27T12:56:55 IST" duration-ms="6908" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LogIn -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:Testcases.LoginLogout@691939c9]" started-at="2026-01-21T12:46:16 IST" name="teardown" finished-at="2026-01-21T12:46:16 IST" duration-ms="279" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:Testcases.LoginLogoutTest@53de625d]" started-at="2026-02-27T12:56:55 IST" name="teardown" finished-at="2026-02-27T12:56:55 IST" duration-ms="233" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- Testcases.LoginLogout -->
-      <class name="Testcases.Dashboardfunctions">
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:Testcases.Dashboardfunctions@7cfac39f]" started-at="2026-01-21T12:46:39 IST" name="launchApp" finished-at="2026-01-21T12:46:45 IST" duration-ms="6478" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApp -->
-        <test-method signature="UserCreation(java.lang.String,java.lang.String)[pri:0, instance:Testcases.Dashboardfunctions@7cfac39f]" started-at="2026-01-21T12:46:45 IST" name="UserCreation" data-provider="driver" finished-at="2026-01-21T12:46:52 IST" duration-ms="6317" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[snaps.deshmukh@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Vivek1234567]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- UserCreation -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:Testcases.Dashboardfunctions@7cfac39f]" started-at="2026-01-21T12:46:52 IST" name="teardown" finished-at="2026-01-21T12:46:52 IST" duration-ms="204" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- Testcases.Dashboardfunctions -->
-    </test> <!-- AllureTest -->
-  </suite> <!-- AllureSuite -->
+      </class> <!-- Testcases.LoginLogoutTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
