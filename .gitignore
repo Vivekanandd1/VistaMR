@@ -1,7 +1,0 @@
-/target/
-/bin/
-.gitignore
-allure-results
-.env
-test-output
-allure-report
