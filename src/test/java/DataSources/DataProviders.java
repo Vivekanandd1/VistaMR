@@ -1,6 +1,5 @@
 package DataSources;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
@@ -17,9 +16,11 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.annotations.DataProvider;
 
-import com.github.javafaker.File;
 
+@Deprecated
 public class DataProviders {
+	
+	/*This Class is deprecated and no longer is in user, kept it for future reference.*/
 
 	String[] cred;
 	static String host = "localhost";
@@ -29,31 +30,29 @@ public class DataProviders {
 
 	@DataProvider(name = "driver")
 	public Object[][] DataExcel() throws IOException {
-		 try (InputStream is = getClass()
-			        .getClassLoader()
-			        .getResourceAsStream("DataSet.xlsx");
+		try (InputStream is = getClass().getClassLoader().getResourceAsStream("DataSet.xlsx");
 
-			XSSFWorkbook wb = new XSSFWorkbook(is);){
+				XSSFWorkbook wb = new XSSFWorkbook(is);) {
 
-		        XSSFSheet sheet = wb.getSheetAt(0);
-		        int rowcount = sheet.getPhysicalNumberOfRows();
-		        int colcount = sheet.getRow(0).getLastCellNum();
+			XSSFSheet sheet = wb.getSheetAt(0);
+			int rowcount = sheet.getPhysicalNumberOfRows();
+			int colcount = sheet.getRow(0).getLastCellNum();
 
-		        System.out.println("Rowcount: " + rowcount);
-		        System.out.println("Colcount: " + colcount);
+			System.out.println("Rowcount: " + rowcount);
+			System.out.println("Colcount: " + colcount);
 
-		        Object data[][] = new Object[rowcount - 1][colcount];
-		        DataFormatter formatter = new DataFormatter();
+			Object data[][] = new Object[rowcount - 1][colcount];
+			DataFormatter formatter = new DataFormatter();
 
-		        for (int i = 1; i < rowcount; i++) {
-		            XSSFRow row = sheet.getRow(i);
-		            for (int j = 0; j < colcount; j++) {
-		                XSSFCell cell = row.getCell(j);
-		                data[i - 1][j] = formatter.formatCellValue(cell);
-		            }
-		        }
-		        return data;
-		    }
+			for (int i = 1; i < rowcount; i++) {
+				XSSFRow row = sheet.getRow(i);
+				for (int j = 0; j < colcount; j++) {
+					XSSFCell cell = row.getCell(j);
+					data[i - 1][j] = formatter.formatCellValue(cell);
+				}
+			}
+			return data;
+		}
 	}
 
 	@DataProvider(name = "CredsDB")
@@ -63,11 +62,9 @@ public class DataProviders {
 		Statement s = con.createStatement();
 		ResultSet rs = s.executeQuery("select * from UserInfo where name='Automation Request'");
 		while (rs.next()) {
-			//dataList.add(new String[] { rs.getString("Email"), rs.getString("Password"), rs.getString("Name") });
-			/*Name is getting from faker library*/
 			dataList.add(new String[] { rs.getString("Email"), rs.getString("Password") });
 		}
-		 return dataList.toArray(new Object[0][]);
+		return dataList.toArray(new Object[0][]);
 	}
 
 }
