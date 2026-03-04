@@ -3,13 +3,14 @@ package Pages;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import AbstractComponent.BaseLineTest;
@@ -41,6 +42,7 @@ public class Datas extends BaseLineTest {
 	private By Profile = By.xpath("//div[contains(@class,'dropdown-username-profile')]");
 	private By LogoutBtn = By.xpath("//a[normalize-space()='Sign out']");
 	private By NextBtn = By.id("next-btn");
+	private By RequestLogHeader = By.xpath("//div/h3[text()='Request Log']");
 
 	public Datas(WebDriver driver, WebDriverWait wait) {
 		this.driver = driver;
@@ -102,52 +104,52 @@ public class Datas extends BaseLineTest {
 	}
 
 	public void Login(String Email, String Password) {
-		
+
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 		// Enter credentials
 		driver.findElement(LoginEmail).sendKeys(Email);
 		driver.findElement(LoginPassword).sendKeys(Password);
 		driver.findElement(LoginBtn).click();
-        wait.until(ExpectedConditions.elementToBeClickable(langDropdownLocator)).click();
-
-		// English option in list if English is preselected
-		WebElement BaseEnglish = driver.findElement(By.xpath("//a[contains(@onclick,'English')]"));
-		// List of possible language locators
-		By[] languages = { By.xpath("//a[normalize-space()='Engelska']"), By.xpath("//a[normalize-space()='Englisch']"),
-				By.xpath("//a[normalize-space()='Inglés']") };
+		wait.until(ExpectedConditions.elementToBeClickable(langDropdownLocator)).click();
 
 		boolean languageSelected = false;
 
-		if (BaseEnglish.isDisplayed() == true) {
-			BaseEnglish.click();
+		// Check if English already available
+		List<WebElement> baseEnglish = driver.findElements(By.xpath("//a[contains(@onclick,'English')]"));
+
+		if (!baseEnglish.isEmpty()) {
+			wait.until(ExpectedConditions.elementToBeClickable(baseEnglish.get(0))).click();
 			System.out.println("English is Preselected");
+			return;
 		}
 
-		else {
-			for (By langLocator : languages) {
-				try {
-					WebElement langElement = driver.findElement(langLocator);
-					if (langElement.isDisplayed()) {
-						wait.until(ExpectedConditions.elementToBeClickable(langElement)).click();
-						languageSelected = true;
-						WebElement submitBtn = wait.until(ExpectedConditions.elementToBeClickable(By.id("button_id")));
-						submitBtn.click();
-						System.out.println("✅ Login completed successfully with language selection.");
-						break;
-					}
-				} catch (NoSuchElementException e) {
-					// Ignore and continue checking next
+		// If not, try other languages
+		By[] languages = { By.xpath("//a[normalize-space()='Engelska']"), By.xpath("//a[normalize-space()='Englisch']"),
+				By.xpath("//a[normalize-space()='Inglés']") };
+
+		for (By langLocator : languages) {
+			try {
+				List<WebElement> langElements = driver.findElements(langLocator);
+				if (!langElements.isEmpty()) {
+
+					wait.until(ExpectedConditions.elementToBeClickable(langElements.get(0))).click();
+
+					WebElement submitBtn = wait.until(ExpectedConditions.elementToBeClickable(By.id("button_id")));
+					submitBtn.click();
+
+					languageSelected = true;
+					System.out.println("✅ Login completed successfully with language selection.");
+					break;
 				}
-			}
-
-			if (!languageSelected) {
-				System.out.println("❌ Language selection failed — no matching option found.");
+			} catch (Exception e) {
+				// Continue checking next language
 			}
 		}
 
-		// Click final submit button
-
+		if (!languageSelected) {
+			System.out.println("❌ Language selection failed — no matching option found.");
+		}
 	}
 
 	public void WindowShuffleChild() {
@@ -167,6 +169,7 @@ public class Datas extends BaseLineTest {
 	}
 
 	public void Logout() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(RequestLogHeader));
 		wait.until(ExpectedConditions.elementToBeClickable(Profile)).click();
 		wait.until(ExpectedConditions.elementToBeClickable(LogoutBtn)).click();
 	}
