@@ -11,7 +11,7 @@ public class DashboardfunctionsTest extends BaseLineTest {
 
 	String Certificatenumber = "51818";
 
-	@Description("This test case is for Dashboard Search and Filter Functionalities")
+	@Description("This test case is for Dashboard Search Functionalities")
 	@Owner("Vivekanand Deshmukh")
 	@Test
 	public void CertSearch() throws InterruptedException {
@@ -24,7 +24,11 @@ public class DashboardfunctionsTest extends BaseLineTest {
 
 		data.Login(Email, Password);
 		CrtfctLgs.CertificateSearch(Certificatenumber);
-
+		CrtfctLgs.SourceFilters();
+		CrtfctLgs.RequestFilters();
+		CrtfctLgs.MarketFilters();
 	}
+	
+
 
 }
