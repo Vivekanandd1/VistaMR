@@ -1,5 +1,6 @@
 package Testcases;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import AbstractComponent.BaseLineTest;
 import DataSources.ConfigReader;
@@ -12,7 +13,7 @@ public class LoginLogoutTest extends BaseLineTest {
 	@Description("This test case is for Login/Logout functinality")
 	@Owner("Vivekanand Deshmukh")
 	@Test
-	public void LogIn() throws InterruptedException {
+	public void LogIn() {
 		String Email = ConfigReader.get("Email");
 		String Password = ConfigReader.get("Password");
 
@@ -22,8 +23,13 @@ public class LoginLogoutTest extends BaseLineTest {
 
 		data.Login(Email, Password);
 		data.Logout();
-		String ActualTitles = driver.getTitle();
-		Assert.assertEquals(ActualTitles, "Kreditz | Vista");
+		String expectedTitle = "Kreditz | Vista";
+
+		wait.until(ExpectedConditions.titleIs(expectedTitle));
+
+		String actualTitle = driver.getTitle();
+
+		Assert.assertEquals(actualTitle, expectedTitle, "Page title mismatch after login!");
 	}
 
 }
