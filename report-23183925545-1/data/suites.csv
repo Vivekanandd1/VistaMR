@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"This test case is for Dashboard Search Functionalities","22562","CertSearch","AllureSuite","2026-03-17","passed","2026-03-17","Testcases.DashboardfunctionsTest","AllureTest","Testcases.DashboardfunctionsTest","CertSearch"
+"This test case is for E2E manual Corporate request completion","35204","ManualCorporateRequests","AllureSuite","2026-03-17","passed","2026-03-17","Testcases.CorporateRequestTest","AllureTest","Testcases.CorporateRequestTest","ManualCorporateRequests"
+"This test case is for UserCreation functionality","14348","UserCreation","AllureSuite","2026-03-17","passed","2026-03-17","Testcases.CreateUserTest","AllureTest","Testcases.CreateUserTest","UserCreation"
+"This test case is for E2E manual request completion","39376","ManualRequests","AllureSuite","2026-03-17","passed","2026-03-17","Testcases.ManualRequestTest","AllureTest","Testcases.ManualRequestTest","ManualRequests"
+"This test case is for Login/Logout functinality","4665","LogIn","AllureSuite","2026-03-17","passed","2026-03-17","Testcases.LoginLogoutTest","AllureTest","Testcases.LoginLogoutTest","LogIn"
