@@ -29,17 +29,13 @@ public class CorporateRequestTest extends BaseLineTest {
 		Name = faker.name().fullName();
 		data.Login(Email, Password);
 		BR.FormFillup(Name, Email);
-		data.Pageload();
 		data.Redirection();
-		data.Pageload();
 		driver.switchTo().defaultContent();
 		BR.Consent();
 		data.WindowShuffleChild();
 		driver.switchTo().defaultContent();
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div/h1[text()='Success!']")));
-		data.Pageload();
 		data.WindowShuffleParent();
-		data.Pageload();
 		String ActualTitle = driver.getTitle();
 		Assert.assertEquals(ActualTitle, "Kreditz | Vista - New request");
 	}

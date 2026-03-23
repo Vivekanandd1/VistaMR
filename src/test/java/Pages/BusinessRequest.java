@@ -28,7 +28,7 @@ public class BusinessRequest extends BaseLineTest {
 	By NextBtn = By.id("next-btn");
 	By SSNField = By.xpath("(//input[@id='ssn'])[1]");
 	By OrgNumber = By.xpath("(//input[@id='ssn'])[2]");
-	By ConinueBtn = (By.id("submit"));
+	By ConinueBtn = By.id("submit");
     
 	public BusinessRequest(WebDriver driver, WebDriverWait wait) {
 
@@ -56,7 +56,7 @@ public class BusinessRequest extends BaseLineTest {
 		js.executeScript("window.scrollBy(0,950)");
 		driver.findElement(Handlesbanken).click();
 		wait.until(ExpectedConditions.elementToBeClickable(NextBtn)).click();
-		wait.until(ExpectedConditions.elementToBeClickable(SSNField)).sendKeys("201212121214");
+		wait.until(ExpectedConditions.elementToBeClickable(SSNField)).sendKeys("201212121215");
 		driver.findElement(OrgNumber).sendKeys("8899336624");
 		driver.findElement(ConinueBtn).click();
 	}
