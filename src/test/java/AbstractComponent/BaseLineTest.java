@@ -95,9 +95,6 @@ public class BaseLineTest {
 		}
 	}
 
-	public void Pageload() throws InterruptedException {
-		Thread.sleep(2000);
-	}
 
 	public Select select(WebElement E, String S) {
 		Select slct = new Select(E);
