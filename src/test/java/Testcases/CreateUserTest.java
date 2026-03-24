@@ -11,7 +11,7 @@ public class CreateUserTest extends BaseLineTest {
 
 	static Faker faker = new Faker();
 	String Fullname = faker.name().fullName();
-	String Emails = faker.internet().emailAddress();
+	String Emails = "Vivek."+faker.name().firstName()+"@kreditz.com";
 	static String PhoneNumber = faker.numerify("##########");
 
 	@Description("This test case is for UserCreation functionality")
