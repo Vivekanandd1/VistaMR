@@ -70,7 +70,7 @@ This is a comprehensive test automation framework built with Selenium WebDriver,
 ## 📁 Project Structure
 
 ```
-PreVista - Qwen/
+PreVista/
 ├── src/
 │   └── test/
 │       ├── java/
@@ -112,7 +112,7 @@ PreVista - Qwen/
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd PreVista-Qwen
+   cd PreVista
    ```
 
 2. **Create environment file**
