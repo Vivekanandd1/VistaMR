@@ -70,7 +70,7 @@ This is a comprehensive test automation framework built with Selenium WebDriver,
 ## 📁 Project Structure
 
 ```
-PreVista/
+PreVista - Qwen/
 ├── src/
 │   └── test/
 │       ├── java/
@@ -388,8 +388,10 @@ Dynamic test data generation using JavaFaker:
   PAGE_LOAD_TIMEOUT=120
   ```
 
+
+
 ---
 
 ## 👥 Contact
 
-For questions or support, reach out at : Vivekanandd1@live.com
+For questions,improvement or support, contact : Vivekanandd1@live.com.

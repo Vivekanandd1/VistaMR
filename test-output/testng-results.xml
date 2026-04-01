@@ -1,25 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-27T12:56:42 IST" name="Default suite" finished-at="2026-02-27T12:56:55 IST" duration-ms="13174">
+  <suite started-at="2026-03-31T20:04:18 IST" name="PreVista Automation Suite" finished-at="2026-03-31T20:11:38 IST" duration-ms="440159">
     <groups>
     </groups>
-    <test started-at="2026-02-27T12:56:42 IST" name="Default test" finished-at="2026-02-27T12:56:55 IST" duration-ms="13174">
-      <class name="Testcases.LoginLogoutTest">
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:Testcases.LoginLogoutTest@53de625d]" started-at="2026-02-27T12:56:42 IST" name="launchApp" finished-at="2026-02-27T12:56:48 IST" duration-ms="5860" status="PASS">
+    <test started-at="2026-03-31T20:04:18 IST" name="UI Automation Tests" finished-at="2026-03-31T20:11:38 IST" duration-ms="440159">
+      <class name="com.vista.tests.CreateUserTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.vista.tests.CreateUserTest@235c997d]" started-at="2026-03-31T20:05:18 IST" name="setUp" finished-at="2026-03-31T20:05:20 IST" duration-ms="2240" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- launchApp -->
-        <test-method signature="LogIn()[pri:0, instance:Testcases.LoginLogoutTest@53de625d]" started-at="2026-02-27T12:56:48 IST" name="LogIn" finished-at="2026-02-27T12:56:55 IST" duration-ms="6908" status="PASS">
+        </test-method> <!-- setUp -->
+        <test-method signature="testUserCreationAndDeletion()[pri:1, instance:com.vista.tests.CreateUserTest@235c997d]" started-at="2026-03-31T20:05:20 IST" name="testUserCreationAndDeletion" finished-at="2026-03-31T20:06:22 IST" duration-ms="61078" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LogIn -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:Testcases.LoginLogoutTest@53de625d]" started-at="2026-02-27T12:56:55 IST" name="teardown" finished-at="2026-02-27T12:56:55 IST" duration-ms="233" status="PASS">
+        </test-method> <!-- testUserCreationAndDeletion -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.vista.tests.CreateUserTest@235c997d]" started-at="2026-03-31T20:06:22 IST" name="tearDown" finished-at="2026-03-31T20:06:23 IST" duration-ms="702" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- Testcases.LoginLogoutTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.vista.tests.CreateUserTest -->
+      <class name="com.vista.tests.DashboardFunctionsTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.vista.tests.DashboardFunctionsTest@1b3ab4f9]" started-at="2026-03-31T20:09:25 IST" name="setUp" finished-at="2026-03-31T20:09:27 IST" duration-ms="1685" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testDashboardSearchAndFilters()[pri:1, instance:com.vista.tests.DashboardFunctionsTest@1b3ab4f9]" started-at="2026-03-31T20:09:27 IST" name="testDashboardSearchAndFilters" finished-at="2026-03-31T20:10:17 IST" duration-ms="50317" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDashboardSearchAndFilters -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.vista.tests.DashboardFunctionsTest@1b3ab4f9]" started-at="2026-03-31T20:10:17 IST" name="tearDown" finished-at="2026-03-31T20:10:18 IST" duration-ms="478" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.vista.tests.DashboardFunctionsTest@1b3ab4f9]" started-at="2026-03-31T20:10:18 IST" name="setUp" finished-at="2026-03-31T20:10:20 IST" duration-ms="2195" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testCertificateSearchWithCustomNumber()[pri:2, instance:com.vista.tests.DashboardFunctionsTest@1b3ab4f9]" started-at="2026-03-31T20:10:20 IST" name="testCertificateSearchWithCustomNumber" finished-at="2026-03-31T20:11:38 IST" duration-ms="77694" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCertificateSearchWithCustomNumber -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.vista.tests.DashboardFunctionsTest@1b3ab4f9]" started-at="2026-03-31T20:11:38 IST" name="tearDown" finished-at="2026-03-31T20:11:38 IST" duration-ms="496" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.vista.tests.DashboardFunctionsTest -->
+      <class name="com.vista.tests.LoginLogoutTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.vista.tests.LoginLogoutTest@577536e0]" started-at="2026-03-31T20:04:18 IST" name="setUp" finished-at="2026-03-31T20:04:22 IST" duration-ms="3273" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testLoginLogout()[pri:1, instance:com.vista.tests.LoginLogoutTest@577536e0]" started-at="2026-03-31T20:04:22 IST" name="testLoginLogout" finished-at="2026-03-31T20:05:17 IST" duration-ms="55408" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginLogout -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.vista.tests.LoginLogoutTest@577536e0]" started-at="2026-03-31T20:05:18 IST" name="tearDown" finished-at="2026-03-31T20:05:18 IST" duration-ms="445" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.vista.tests.LoginLogoutTest -->
+      <class name="com.vista.tests.ManualRequestTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.vista.tests.ManualRequestTest@36bed37a]" started-at="2026-03-31T20:06:23 IST" name="setUp" finished-at="2026-03-31T20:06:25 IST" duration-ms="2112" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testManualRequestFlow()[pri:1, instance:com.vista.tests.ManualRequestTest@36bed37a]" started-at="2026-03-31T20:06:25 IST" name="testManualRequestFlow" finished-at="2026-03-31T20:07:55 IST" duration-ms="90125" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testManualRequestFlow -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.vista.tests.ManualRequestTest@36bed37a]" started-at="2026-03-31T20:07:55 IST" name="tearDown" finished-at="2026-03-31T20:07:56 IST" duration-ms="539" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.vista.tests.ManualRequestTest -->
+      <class name="com.vista.tests.CorporateRequestTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.vista.tests.CorporateRequestTest@4a9a878]" started-at="2026-03-31T20:07:56 IST" name="setUp" finished-at="2026-03-31T20:07:57 IST" duration-ms="1604" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testCorporateRequestFlow()[pri:1, instance:com.vista.tests.CorporateRequestTest@4a9a878]" started-at="2026-03-31T20:07:57 IST" name="testCorporateRequestFlow" finished-at="2026-03-31T20:09:24 IST" duration-ms="86869" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCorporateRequestFlow -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.vista.tests.CorporateRequestTest@4a9a878]" started-at="2026-03-31T20:09:24 IST" name="tearDown" finished-at="2026-03-31T20:09:25 IST" duration-ms="481" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.vista.tests.CorporateRequestTest -->
+    </test> <!-- UI Automation Tests -->
+  </suite> <!-- PreVista Automation Suite -->
 </testng-results>

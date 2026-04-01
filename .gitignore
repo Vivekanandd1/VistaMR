@@ -1,7 +1,75 @@
-/target/
-/bin/
-.gitignore
-allure-results
+# ===========================================
+# PreVista Automation Framework - .gitignore
+# ===========================================
+
+# Environment files (NEVER commit credentials)
 .env
-test-output
-allure-report
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.project
+.classpath
+.factorypath
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# Build outputs
+bin/
+build/
+*.class
+*.jar
+*.war
+*.ear
+
+# Logs
+logs/
+*.log
+log/
+
+# Test Output
+test-output/
+surefire-reports/
+failsafe-reports/
+
+# Allure
+allure-results/
+allure-report/
+.allure/
+
+# Screenshots
+screenshots/
+*.png
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Coverage
+coverage/
+jacoco/
+*.exec
+
+# Local configuration
+config-local.properties
+application-local.properties

@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="AllureSuite">
-  <listeners>
-        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
-    </listeners>
-	<test thread-count="5" name="AllureTest">
-		<classes>
-			<class name="Testcases.ManualRequestTest" />
-			<class name="Testcases.LoginLogoutTest" />
-			<class name="Testcases.CreateUserTest" />
-			<class name="Testcases.DashboardfunctionsTest" />
-			<class name="Testcases.CorporateRequestTest" />
-		</classes>
-	</test> <!--
-	Test -->
-</suite> <!---->
-
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">  
+<suite name="PreVista Automation Suite">  
+    <listeners>  
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>  
+        <listener class-name="com.vista.framework.listeners.TestListener"/>  
+        <listener class-name="com.vista.framework.listeners.AnnotationTransformer"/>  
+    </listeners>  
+    <test name="UI Automation Tests" preserve-order="true">  
+        <classes>  
+            <class name="com.vista.tests.LoginLogoutTest"/>  
+            <class name="com.vista.tests.CreateUserTest"/>  
+            <class name="com.vista.tests.ManualRequestTest"/>  
+            <class name="com.vista.tests.CorporateRequestTest"/>  
+            <class name="com.vista.tests.DashboardFunctionsTest"/>  
+        </classes>  
+    </test>  
+</suite> 
