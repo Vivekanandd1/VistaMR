@@ -91,12 +91,12 @@ public class WebDriverFactory {
         ChromeOptions options = new ChromeOptions();
 
         // Chrome-specific configurations
-//        if (config.isHeadless()) {
-//            options.addArguments("--headless=new");
-//            options.addArguments("--no-sandbox");
-//            options.addArguments("--disable-dev-shm-usage");
-//            options.addArguments("--disable-gpu");
-//        }
+        if (config.isHeadless()) {
+            options.addArguments("--headless=new");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--disable-gpu");
+        }
 
         options.addArguments("--incognito");
         options.addArguments("--window-size=1920,1080");
@@ -105,7 +105,7 @@ public class WebDriverFactory {
         options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
         options.setExperimentalOption("useAutomationExtension", false);
 
-        logger.info("Creating ChromeDriver with headless: {}");
+        logger.info("Creating ChromeDriver with headless: {}", config.isHeadless());
         return new ChromeDriver(options);
     }
 
