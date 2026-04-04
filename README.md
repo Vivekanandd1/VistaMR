@@ -365,6 +365,19 @@ Dynamic test data generation using JavaFaker:
 - `RetryAnalyzer`: Automatic retry on failure
 - `AnnotationTransformer`: Apply retry to all tests
 
+### Utils
+- `ElementUtils`: ReUsable helper menthods.
+- `ScreenshotUtil`: Automatic Screenshot capturing on different scenarios.
+
+### Pages
+- Locator and Functional Logic for a particular Web Screen seprated from another class.
+-  `Reason`: When a UI or Element change in future, User will modify this class only and nowhere else.
+
+### Test
+- Testcases seprated from the base logics and locators, Neat and clean Actions only.
+
+### testNg.xml
+- XML file for the segregation of testcases based on Testing like Smoke, Regression with inclusion of those testcases. 
 ---
 
 ## 🐛 Troubleshooting
