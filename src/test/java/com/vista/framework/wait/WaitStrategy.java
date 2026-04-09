@@ -208,10 +208,10 @@ public class WaitStrategy {
     /**
      * Hard wait - use only when absolutely necessary
      */
-    public void hardWait(int seconds) {
+    public void hardWait(int milliseconds) {
         try {
-            logger.trace("Hard wait for {}sc", seconds);
-            Thread.sleep(seconds);
+            logger.trace("Hard wait for {}sc", milliseconds);
+            Thread.sleep(milliseconds);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             logger.error("Hard wait interrupted", e);

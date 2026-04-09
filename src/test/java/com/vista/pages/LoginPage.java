@@ -87,8 +87,9 @@ public class LoginPage {
         // Try to select English
         for (By langOption : languageOptions) {
             try {
+            	wait.waitForElementVisibility(EnglishLang);
                 if (elementUtils.exists(EnglishLang)) {
-                    elementUtils.click(EnglishLang);
+                	wait.waitForElementToBeClickable(EnglishLang).click();
                     logger.info(" English Language selected successfully");
                     return;
                 }
