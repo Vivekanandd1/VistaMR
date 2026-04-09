@@ -9,14 +9,15 @@
 	<packaging>jar</packaging>
 
 	<name>PreVista Automation Framework</name>
-	<description>Enterprise-level Test Automation Framework for Vista/Kreditz Application</description>
+	<description>Enterprise-level Test Automation Framework for Vista/Kreditz
+		Application</description>
 
 	<properties>
 		<!-- Java Version -->
 		<maven.compiler.source>21</maven.compiler.source>
 		<maven.compiler.target>21</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		
+
 		<!-- Dependency Versions -->
 		<selenium.version>4.40.0</selenium.version>
 		<testng.version>7.10.2</testng.version>
@@ -26,7 +27,7 @@
 		<log4j2.version>2.24.3</log4j2.version>
 		<mysql.version>9.2.0</mysql.version>
 		<javafaker.version>1.0.2</javafaker.version>
-		
+
 		<!-- Plugin Versions -->
 		<maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
 		<maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
@@ -82,7 +83,8 @@
 			<version>${javafaker.version}</version>
 		</dependency>
 
-		<!-- ==================== REST Assured (API Testing) ==================== -->
+		<!-- ==================== REST Assured (API Testing)
+		==================== -->
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>rest-assured</artifactId>
@@ -157,7 +159,8 @@
 				</configuration>
 			</plugin>
 
-			<!-- ==================== Maven Surefire Plugin (TestNG) ==================== -->
+			<!-- ==================== Maven Surefire Plugin (TestNG)
+			==================== -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
@@ -170,7 +173,8 @@
 						-javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/1.9.22.1/aspectjweaver-1.9.22.1.jar
 					</argLine>
 					<systemPropertyVariables>
-						<allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
+						<allure.results.directory>
+							${project.build.directory}/allure-results</allure.results.directory>
 					</systemPropertyVariables>
 				</configuration>
 				<dependencies>
@@ -189,10 +193,12 @@
 				<version>${allure-maven-plugin.version}</version>
 				<configuration>
 					<reportVersion>${allure.version}</reportVersion>
-					<allureDownloadUrl>https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/${allure.version}/allure-commandline-${allure.version}.zip</allureDownloadUrl>
+					<resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
+					<reportDirectory>allure-report</reportDirectory>
 				</configuration>
 			</plugin>
 		</plugins>
+
 
 		<resources>
 			<resource>
