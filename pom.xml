@@ -57,6 +57,13 @@
 			<version>${allure.version}</version>
 		</dependency>
 
+		<!-- ==================== Allure Attachments ==================== -->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-attachments</artifactId>
+			<version>${allure.version}</version>
+		</dependency>
+
 		<!-- ==================== Apache POI (Excel) ==================== -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
