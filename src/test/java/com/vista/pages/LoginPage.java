@@ -105,7 +105,7 @@ public class LoginPage {
      * Perform complete login with credentials
      */
     @Step("Login with credentials")
-    public void login(String email, String password) {
+    public void login(@Param(mode=Mode.MASKED) String email,@Param(mode=Mode.MASKED) String password) {
         enterEmail(email);
         enterPassword(password);
         clickLogin();
