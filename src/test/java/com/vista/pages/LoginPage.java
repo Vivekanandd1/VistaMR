@@ -2,13 +2,13 @@ package com.vista.pages;
 
 import com.vista.framework.utils.ElementUtils;
 import com.vista.framework.wait.WaitStrategy;
-import io.qameta.allure.Step;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
+import io.qameta.allure.*;
+import io.qameta.allure.model.Parameter;
+import io.qameta.allure.model.Parameter.Mode;
 
 /**
  * Login Page Object Model.
@@ -48,9 +48,9 @@ public class LoginPage {
     /**
      * Enter email address
      */
-    @Step("Enter email: {email}")
-    public LoginPage enterEmail(String email) {
-        logger.debug("Entering email: {}", email);
+    @Step("Enter email")
+    public LoginPage enterEmail(@Param(mode=Mode.MASKED) String email) {
+        logger.debug("Entering email: {}");
         elementUtils.sendKeys(loginEmail, email);
         return this;
     }
@@ -59,7 +59,7 @@ public class LoginPage {
      * Enter password
      */
     @Step("Enter password")
-    public LoginPage enterPassword(String password) {
+    public LoginPage enterPassword(@Param(mode=Mode.MASKED) String password) {
         logger.debug("Entering password");
         elementUtils.sendKeys(loginPassword, password);
         return this;
