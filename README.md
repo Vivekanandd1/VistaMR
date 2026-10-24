@@ -1,7 +1,7 @@
-# PreVista Automation Framework
+# PreVista Automation Framework 
 
 Enterprise-level Test Automation Framework for Vista/Kreditz Application.
-
+Note: The account for this application is deactivated and this is reason for build failure. Thanks
 ## 📋 Table of Contents
 
 - [Overview](#overview)
